@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LR Assessoria Financeira</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>LR Consórcios & Assessoria Financeira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --lilás-fundo: #eae4f6; /* Um tom de lilás claro mais visível e elegante */
-            --roxo-moderno: #6c5ce7; /* Roxo/lilás vibrante para os botões e detalhes */
-            --roxo-escuro: #4834d4;
-            --texto-cor: #1e272e; /* Cinza quase preto para leitura perfeita */
-            --branco: #ffffff;
-            --fonte-titulos: 'Montserrat', sans-serif;
-            --fonte-textos: 'Poppins', sans-serif;
+            --bg-lilac: #f3effa; /* Fundo lilás bem claro e moderno */
+            --brand-lilac: #6C63FF; /* Lilás moderno */
+            --brand-purple: #4A3AFF; /* Roxo escuro fintech */
+            --brand-gold: #D4AF37; /* Dourado suave premium */
+            --text-dark: #1e2229;
+            --text-muted: #57606f;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #4A3AFF 0%, #6C63FF 100%);
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'Poppins', sans-serif;
         }
 
         * {
@@ -28,10 +31,11 @@
         }
 
         body {
-            font-family: var(--fonte-textos);
-            background-color: var(--lilás-fundo);
-            color: var(--texto-cor);
+            font-family: var(--font-body);
+            background-color: var(--bg-lilac);
+            color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -40,25 +44,26 @@
             margin: 0 auto;
         }
 
-        h1, h2, h3, .logo h2 {
-            font-family: var(--fonte-titulos);
-            font-weight: 700;
-        }
-
-        span {
-            color: var(--roxo-moderno);
+        span.highlight {
+            color: var(--brand-purple);
             font-weight: 800;
         }
 
-        /* NAVBAR */
+        span.gold-detail {
+            color: var(--brand-gold);
+            font-weight: 700;
+        }
+
+        /* NAVBAR (Estilo Glassmorphism) */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 18px 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(108, 92, 231, 0.08);
+            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
         }
 
         .navbar .container {
@@ -68,215 +73,367 @@
         }
 
         .logo h2 {
-            font-size: 24px;
+            font-family: var(--font-title);
+            font-size: 22px;
+            font-weight: 800;
             letter-spacing: -0.5px;
+        }
+
+        .logo h2 i {
+            color: var(--brand-gold);
+            margin-right: 5px;
+            font-size: 18px;
         }
 
         .menu a {
             text-decoration: none;
-            color: var(--texto-cor);
+            color: var(--text-dark);
             font-weight: 600;
-            margin-left: 25px;
+            margin-left: 30px;
+            font-size: 14px;
             transition: 0.3s;
-            font-size: 15px;
         }
 
         .menu a:hover {
-            color: var(--roxo-moderno);
+            color: var(--brand-lilac);
         }
 
         .btn-nav {
-            background-color: var(--roxo-moderno);
-            color: white !important;
-            padding: 12px 24px;
+            background: var(--gradient-primary);
+            color: var(--white) !important;
+            padding: 12px 26px;
             border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+            box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
         }
 
-        /* HERO (SEÇÃO INICIAL) */
+        /* HERO SECTION */
         .hero-section {
-            padding: 120px 0 90px 0;
-            background: linear-gradient(135deg, #ffffff 0%, var(--lilás-fundo) 100%);
-            text-align: left;
+            padding: 100px 0 80px 0;
+            background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.15), transparent 50%), var(--white);
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
 
         .hero-content h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            margin-bottom: 25px;
+            font-family: var(--font-title);
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
         .hero-content p {
-            font-size: 18px;
+            font-size: 17px;
+            color: var(--text-muted);
             margin-bottom: 35px;
-            color: #4a5568;
-            max-width: 600px;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .btn-primary {
-            background-color: var(--roxo-moderno);
-            color: white;
+            background: var(--gradient-primary);
+            color: var(--white);
             text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 50px;
-            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 16px;
             font-weight: 600;
-            margin-right: 20px;
-            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3);
+            box-shadow: 0 8px 24px rgba(74, 58, 255, 0.25);
             transition: 0.3s;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(74, 58, 255, 0.35);
         }
 
         .btn-secondary {
-            color: var(--roxo-moderno);
+            color: var(--brand-purple);
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
-            border-bottom: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             transition: 0.3s;
         }
 
         .btn-secondary:hover {
-            border-bottom: 2px solid var(--roxo-moderno);
+            gap: 12px;
         }
 
-        /* LISTA DE SIMULAÇÕES */
-        .services-section {
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* SEÇÃO SIMULAÇÕES (CARDS PREMIUM) */
+        .simulations-section {
             padding: 100px 0;
-            background-color: var(--lilás-fundo);
+            background-color: var(--bg-lilac);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
+        .section-header {
             text-align: center;
             margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-title);
+            font-size: 38px;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
             font-size: 16px;
-            color: #57606f;
         }
 
-        .services-grid {
+        .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
         }
 
-        .service-card {
-            background: var(--branco);
+        .card-premium {
+            background-color: var(--white);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(74, 58, 255, 0.03);
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 45px rgba(108, 92, 231, 0.12);
+        .card-premium:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(74, 58, 255, 0.12);
         }
 
-        .card-image img {
-            width: 100%;
+        .card-img-wrapper {
+            position: relative;
             height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            transition: 0.5s ease;
         }
 
-        .card-content {
-            padding: 30px;
+        .card-premium:hover .card-img-wrapper img {
+            transform: scale(1.06);
         }
 
-        .card-content h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: #2d3436;
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--brand-purple);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        .card-content p {
+        .card-body {
+            padding: 28px;
+        }
+
+        .card-body h3 {
+            font-family: var(--font-title);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
             font-size: 14px;
+            color: var(--text-muted);
             margin-bottom: 25px;
-            color: #57606f;
+            height: 66px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .btn-card {
             display: block;
             text-align: center;
             text-decoration: none;
-            background: #f1f2f6;
-            color: var(--roxo-moderno);
+            background-color: var(--bg-lilac);
+            color: var(--brand-purple);
             padding: 12px;
-            border-radius: 14px;
+            border-radius: 12px;
             font-weight: 600;
+            font-size: 14px;
             transition: 0.3s;
         }
 
-        .btn-card:hover {
-            background: var(--roxo-moderno);
-            color: white;
+        .card-premium:hover .btn-card {
+            background: var(--gradient-primary);
+            color: var(--white);
         }
 
-        /* RODAPÉ */
+        /* QUEM SOMOS & RESULTADOS */
+        .about-section {
+            background-color: var(--white);
+            padding: 100px 0;
+            border-radius: 60px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-title);
+            font-size: 36px;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .results-mini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .result-box {
+            background-color: var(--bg-lilac);
+            padding: 25px;
+            border-radius: 20px;
+            border-left: 4px solid var(--brand-gold);
+        }
+
+        .result-box h4 {
+            font-family: var(--font-title);
+            font-size: 30px;
+            color: var(--brand-purple);
+            margin-bottom: 5px;
+        }
+
+        .result-box p {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* FOOTER */
         .footer {
-            background-color: var(--branco);
-            padding: 60px 0;
-            border-top: 1px solid rgba(108, 92, 231, 0.1);
+            background-color: var(--white);
+            padding: 60px 0 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(108, 99, 255, 0.1);
         }
 
-        .footer-content {
+        .footer-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #f1eeff;
         }
 
-        .footer-info h3 {
-            font-size: 22px;
+        .footer-brand h3 {
+            font-family: var(--font-title);
+            font-size: 20px;
             margin-bottom: 10px;
         }
 
-        .footer-info p {
-            color: #57606f;
-            margin-bottom: 8px;
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
         .btn-whatsapp {
-            background-color: #00d2d3;
-            color: white;
+            background-color: #25D366;
+            color: var(--white);
             text-decoration: none;
-            padding: 16px 35px;
+            padding: 14px 30px;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 6px 18px rgba(0, 210, 211, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
             transition: 0.3s;
-            display: inline-block;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(0, 210, 211, 0.4);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
-            font-size: 13px;
-            color: #a4b0be;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
-        /* CELULAR */
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero-content p {
+                margin: 0 auto 35px auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-image {
+                order: -1;
+            }
+        }
+
         @media (max-width: 768px) {
             .menu { display: none; }
             .hero-content h1 { font-size: 36px; }
-            .footer-content { flex-direction: column; text-align: center; }
+            .footer-flex, .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -285,95 +442,137 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">
-                <h2>LR <span>Assessoria</span></h2>
+                <h2><i class="fa-solid fa-gem"></i>LR <span class="highlight">Assessoria</span></h2>
             </div>
             <nav class="menu">
                 <a href="#inicio">Início</a>
-                <a href="#simulacoes">Simulações</a>
-                <a href="#contato" class="btn-nav">Fale Conosco</a>
+                <a href="#solucoes">Soluções</a>
+                <a href="#sobre">Quem Somos</a>
+                <a href="#contato" class="btn-nav">Falar com Consultor</a>
             </nav>
         </div>
     </header>
 
     <section id="inicio" class="hero-section">
-        <div class="container hero-content">
-            <h1>Planeje seu futuro com <span>estratégia</span> e modernidade.</h1>
-            <p>Especialistas em transformar planos em realidade através de simulações inteligentes para cada perfil.</p>
-            <div class="hero-buttons">
-                <a href="#simulacoes" class="btn-primary">Ver Simulações</a>
-                <a href="https://wa.me/seu-numero" class="btn-secondary">Falar com Consultor</a>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Transforme seus sonhos em <span class="highlight">patrimônio</span><span class="gold-detail">.</span></h1>
+                <p>Planos inteligentes e customizados para a aquisição de bens, veículos e expansão de investimentos estratégicos, integrados com atendimento de excelência nacional.</p>
+                <div class="hero-buttons">
+                    <a href="#solucoes" class="btn-primary">Simular Agora</a>
+                    <a href="https://wa.me/seu-numero" class="btn-secondary">Falar no WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=600" alt="Consultoria Estratégica Premium">
             </div>
         </div>
     </section>
 
-    <section id="simulacoes" class="services-section">
+    <section id="solucoes" class="simulations-section">
         <div class="container">
-            <h2 class="section-title">Escolha sua <span>Simulação</span></h2>
-            <p class="subtitle">Selecione o bem que deseja conquistar e veja as melhores condições.</p>
+            <div class="section-header">
+                <h2>Soluções <span class="highlight">Inteligentes</span></h2>
+                <p>Escolha o segmento ideal para fazer a sua simulação personalizada hoje.</p>
+            </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=400" alt="Automóveis">
+            <div class="grid-cards">
+                <div class="card-premium">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge"><i class="fa-solid fa-star"></i> Premium</span>
+                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=400" alt="Automóveis de Luxo">
                     </div>
-                    <div class="card-content">
+                    <div class="card-body">
                         <h3>Automóvel</h3>
-                        <p>Simulações para carros novos e seminovos com as melhores taxas do mercado.</p>
-                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Agora</a>
+                        <p>Simulações exclusivas para novos, seminovos e frotas comerciais com taxas altamente competitivas.</p>
+                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Automóvel</a>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=400" alt="Imóveis">
+                <div class="card-premium">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge"><i class="fa-solid fa-house"></i> Conquista</span>
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=400" alt="Casas e Imóveis de alto padrão">
                     </div>
-                    <div class="card-content">
+                    <div class="card-body">
                         <h3>Imóvel</h3>
-                        <p>Planeje sua casa própria, terreno ou reforma com parcelas que cabem no bolso.</p>
-                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Agora</a>
+                        <p>Planeje a compra de imóveis residenciais, comerciais, terrenos ou reformas estruturadas sem juros bancários.</p>
+                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Imóvel</a>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1586191582151-f746323877d3?auto=format&fit=crop&q=80&w=400" alt="Pesados">
+                <div class="card-premium">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge"><i class="fa-solid fa-tractor"></i> Produção</span>
+                        <img src="https://images.unsplash.com/photo-1530268578403-bf6e898031ee?auto=format&fit=crop&q=80&w=400" alt="Maquinário Agrícola e Pesados">
                     </div>
-                    <div class="card-content">
+                    <div class="card-body">
                         <h3>Pesados e Agrícola</h3>
-                        <p>Caminhões, maquinário agrícola e soluções para apicultura com planos exclusivos.</p>
-                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Agora</a>
+                        <p>Linhas de crédito para caminhões, implementos rodoviários, maquinários agrícolas modernos e projetos de apicultura.</p>
+                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Pesados</a>
                     </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611974717482-4828c2424b9a?auto=format&fit=crop&q=80&w=400" alt="Investimentos">
+                <div class="card-premium">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge"><i class="fa-solid fa-chart-line"></i> Rentabilidade</span>
+                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400" alt="Gráficos Financeiros e Investimentos">
                     </div>
-                    <div class="card-content">
+                    <div class="card-body">
                         <h3>Investimentos</h3>
-                        <p>Consultoria estratégica para rentabilizar seu patrimônio com segurança.</p>
-                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Agora</a>
+                        <p>Potencialize seu patrimônio financeiro por meio da alavancagem planejada e consultoria em consórcios.</p>
+                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Investimento</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h2>Especialistas em realizar <span class="highlight">grandes conquistas</span><span class="gold-detail">.</span></h2>
+                <p>A LR Assessoria Financeira nasceu com o firme propósito de direcionar nossos clientes rumo aos seus objetivos financeiros de longo prazo. Através de um ecossistema transparente, seguro e inteiramente focado no atendimento humanizado, encontramos o plano ideal para as suas necessidades estruturais.</p>
+                <p>Unimos a inovação das maiores fintechs com a solidez que o mercado exige.</p>
+            </div>
+            <div class="results-mini-grid">
+                <div class="result-box">
+                    <h4>+5 Anos</h4>
+                    <p>De atuação sólida e segura no mercado financeiro.</p>
+                </div>
+                <div class="result-box">
+                    <h4>+1.2k</h4>
+                    <p>Clientes assessorados e satisfeitos em todo o Brasil.</p>
+                </div>
+                <div class="result-box">
+                    <h4>R$ 45M+</h4>
+                    <p>Em créditos devidamente aprovados e estruturados.</p>
+                </div>
+                <div class="result-box">
+                    <h4>99.4%</h4>
+                    <p>Taxa de satisfação interna e fidelidade dos investidores.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contato" class="footer">
-        <div class="container footer-content">
-            <div class="footer-info">
-                <h3>LR Assessoria Financeira</h3>
-                <p>O seu próximo passo começa aqui.</p>
-                <p><i class="fa-solid fa-envelope"></i> contato@lrassessoria.com.br</p>
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-brand">
+                    <h3>LR <span class="highlight">Assessoria Financeira</span></h3>
+                    <p>Segurança, transparência e modernidade em planejamento patrimonial.</p>
+                </div>
+                <div class="footer-action">
+                    <a href="https://wa.me/seu-numero" target="_blank" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Chamar Atendimento Especializado
+                    </a>
+                </div>
             </div>
-            <div class="footer-cta">
-                <a href="https://wa.me/seu-numero" target="_blank" class="btn-whatsapp">
-                    <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
-                </a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LR Assessoria. Todos os direitos reservados. Horário de Atendimento: Seg a Sex, das 09h às 18h.</p>
+                <p>Desenvolvido com Rigor de Autoridade e Confiança.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 LR Assessoria. Modernidade e Confiança.</p>
         </div>
     </footer>
 
