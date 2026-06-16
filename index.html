@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-lilac: #f3effa; /* Fundo lilás bem claro e moderno */
+            --bg-lilac: #f3effa; /* Fundo lilás claro geral */
             --brand-lilac: #6C63FF; /* Lilás moderno */
             --brand-purple: #4A3AFF; /* Roxo escuro fintech */
             --brand-gold: #D4AF37; /* Dourado suave premium */
             --text-dark: #1e2229;
             --text-muted: #57606f;
             --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #4A3AFF 0%, #6C63FF 100%);
+            --gradient-lilac: linear-gradient(135deg, #6C63FF 0%, #4A3AFF 100%);
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Poppins', sans-serif;
         }
@@ -35,7 +35,6 @@
             background-color: var(--bg-lilac);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
@@ -45,25 +44,24 @@
         }
 
         span.highlight {
-            color: var(--brand-purple);
+            color: var(--brand-lilac);
             font-weight: 800;
         }
 
-        span.gold-detail {
+        span.gold {
             color: var(--brand-gold);
-            font-weight: 700;
         }
 
-        /* NAVBAR (Estilo Glassmorphism) */
+        /* NAVBAR (Sem diamante) */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 16px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.08);
+            border-bottom: 2px solid var(--brand-lilac);
         }
 
         .navbar .container {
@@ -74,22 +72,16 @@
 
         .logo h2 {
             font-family: var(--font-title);
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .logo h2 i {
-            color: var(--brand-gold);
-            margin-right: 5px;
-            font-size: 18px;
+            color: var(--text-dark);
         }
 
         .menu a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
-            margin-left: 30px;
+            margin-left: 25px;
             font-size: 14px;
             transition: 0.3s;
         }
@@ -99,19 +91,17 @@
         }
 
         .btn-nav {
-            background: var(--gradient-primary);
+            background: var(--gradient-lilac);
             color: var(--white) !important;
-            padding: 12px 26px;
+            padding: 10px 22px;
             border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
         }
 
         /* HERO SECTION */
         .hero-section {
-            padding: 100px 0 80px 0;
-            background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.15), transparent 50%), var(--white);
-            border-bottom-left-radius: 60px;
-            border-bottom-right-radius: 60px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--bg-lilac) 100%);
+            border-bottom: 3px solid var(--brand-lilac);
         }
 
         .hero-grid {
@@ -123,192 +113,134 @@
 
         .hero-content h1 {
             font-family: var(--font-title);
-            font-size: 48px;
+            font-size: 46px;
             line-height: 1.2;
             margin-bottom: 20px;
-            letter-spacing: -1px;
         }
 
         .hero-content p {
             font-size: 17px;
             color: var(--text-muted);
             margin-bottom: 35px;
-            max-width: 540px;
         }
 
         .hero-buttons {
             display: flex;
-            align-items: center;
             gap: 20px;
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
+            background: var(--gradient-lilac);
             color: var(--white);
             text-decoration: none;
             padding: 16px 36px;
-            border-radius: 16px;
+            border-radius: 14px;
             font-weight: 600;
-            box-shadow: 0 8px 24px rgba(74, 58, 255, 0.25);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
             transition: 0.3s;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(74, 58, 255, 0.35);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
             color: var(--brand-purple);
             text-decoration: none;
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-secondary:hover {
-            gap: 12px;
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
+            align-self: center;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 500px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.15);
         }
 
-        /* SEÇÃO SIMULAÇÕES (CARDS PREMIUM) */
-        .simulations-section {
-            padding: 100px 0;
+        /* SEÇÃO DE BENEFÍCIOS (FUNDO LILÁS DESTACADO) */
+        .services-section {
+            padding: 90px 0;
             background-color: var(--bg-lilac);
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
             font-family: var(--font-title);
             font-size: 38px;
-            letter-spacing: -1px;
-            margin-bottom: 15px;
+            margin-bottom: 50px;
         }
 
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        .grid-cards {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
-        .card-premium {
-            background-color: var(--white);
-            border-radius: 24px;
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(74, 58, 255, 0.03);
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            transition: 0.3s;
+            border: 1px solid rgba(108, 99, 255, 0.1);
         }
 
-        .card-premium:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(74, 58, 255, 0.12);
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.15);
         }
 
-        .card-img-wrapper {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .card-img-wrapper img {
+        .card-image img {
             width: 100%;
-            height: 100%;
+            height: 210px;
             object-fit: cover;
-            transition: 0.5s ease;
         }
 
-        .card-premium:hover .card-img-wrapper img {
-            transform: scale(1.06);
+        .card-content {
+            padding: 25px;
         }
 
-        .card-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--brand-purple);
-            backdrop-filter: blur(5px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .card-body {
-            padding: 28px;
-        }
-
-        .card-body h3 {
+        .card-content h3 {
             font-family: var(--font-title);
             font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        .card-body p {
+        .card-content p {
             font-size: 14px;
             color: var(--text-muted);
-            margin-bottom: 25px;
-            height: 66px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            margin-bottom: 20px;
+            height: 60px;
         }
 
         .btn-card {
             display: block;
             text-align: center;
             text-decoration: none;
-            background-color: var(--bg-lilac);
+            background: var(--bg-lilac);
             color: var(--brand-purple);
             padding: 12px;
             border-radius: 12px;
             font-weight: 600;
-            font-size: 14px;
             transition: 0.3s;
         }
 
-        .card-premium:hover .btn-card {
-            background: var(--gradient-primary);
+        .service-card:hover .btn-card {
+            background: var(--gradient-lilac);
             color: var(--white);
         }
 
-        /* QUEM SOMOS & RESULTADOS */
+        /* QUEM SOMOS */
         .about-section {
             background-color: var(--white);
-            padding: 100px 0;
-            border-radius: 60px;
+            padding: 90px 0;
+            border-radius: 40px;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
@@ -316,124 +248,71 @@
             font-family: var(--font-title);
             font-size: 36px;
             margin-bottom: 20px;
-            letter-spacing: -1px;
         }
 
         .about-content p {
             color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
-        .results-mini-grid {
+        .metrics-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        .result-box {
-            background-color: var(--bg-lilac);
-            padding: 25px;
-            border-radius: 20px;
+        .metric-box {
+            background: var(--bg-lilac);
+            padding: 20px;
+            border-radius: 16px;
             border-left: 4px solid var(--brand-gold);
         }
 
-        .result-box h4 {
+        .metric-box h4 {
             font-family: var(--font-title);
-            font-size: 30px;
+            font-size: 28px;
             color: var(--brand-purple);
-            margin-bottom: 5px;
         }
 
-        .result-box p {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        /* FOOTER */
+        /* RODAPÉ */
         .footer {
             background-color: var(--white);
-            padding: 60px 0 30px 0;
+            padding: 50px 0 30px 0;
             margin-top: 60px;
             border-top: 1px solid rgba(108, 99, 255, 0.1);
         }
 
-        .footer-flex {
+        .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 30px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #f1eeff;
-        }
-
-        .footer-brand h3 {
-            font-family: var(--font-title);
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .footer-brand p {
-            font-size: 14px;
-            color: var(--text-muted);
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--bg-lilac);
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: var(--white);
             text-decoration: none;
-            padding: 14px 30px;
+            padding: 14px 28px;
             border-radius: 50px;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-            transition: 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
 
         .footer-bottom {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
+            padding-top: 25px;
         }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 992px) {
-            .hero-grid, .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .hero-content p {
-                margin: 0 auto 35px auto;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-image {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu { display: none; }
-            .hero-content h1 { font-size: 36px; }
-            .footer-flex, .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
+            .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-buttons { justify-content: center; }
         }
     </style>
 </head>
@@ -442,7 +321,7 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">
-                <h2><i class="fa-solid fa-gem"></i>LR <span class="highlight">Assessoria</span></h2>
+                <h2>LR Consórcios <span class="highlight">&</span> Assessoria Financeira<span class="gold">.</span></h2>
             </div>
             <nav class="menu">
                 <a href="#inicio">Início</a>
@@ -456,72 +335,65 @@
     <section id="inicio" class="hero-section">
         <div class="container hero-grid">
             <div class="hero-content">
-                <h1>Transforme seus sonhos em <span class="highlight">patrimônio</span><span class="gold-detail">.</span></h1>
-                <p>Planos inteligentes e customizados para a aquisição de bens, veículos e expansão de investimentos estratégicos, integrados com atendimento de excelência nacional.</p>
+                <h1>Transforme seus sonhos em <span class="highlight">patrimônio</span>.</h1>
+                <p>Planos inteligentes para imóveis, veículos e investimentos, com atendimento personalizado em todo o Brasil.</p>
                 <div class="hero-buttons">
                     <a href="#solucoes" class="btn-primary">Simular Agora</a>
                     <a href="https://wa.me/seu-numero" class="btn-secondary">Falar no WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=600" alt="Consultoria Estratégica Premium">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Planejamento e Crescimento Financeiro">
             </div>
         </div>
     </section>
 
-    <section id="solucoes" class="simulations-section">
+    <section id="solucoes" class="services-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Soluções <span class="highlight">Inteligentes</span></h2>
-                <p>Escolha o segmento ideal para fazer a sua simulação personalizada hoje.</p>
-            </div>
+            <h2 class="section-title">Nossos <span class="highlight">Segmentos de Consórcio</span></h2>
             
-            <div class="grid-cards">
-                <div class="card-premium">
-                    <div class="card-img-wrapper">
-                        <span class="card-badge"><i class="fa-solid fa-star"></i> Premium</span>
-                        <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=400" alt="Automóveis de Luxo">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=400" alt="Veículos e Automóveis">
                     </div>
-                    <div class="card-body">
-                        <h3>Automóvel</h3>
-                        <p>Simulações exclusivas para novos, seminovos e frotas comerciais com taxas altamente competitivas.</p>
-                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Automóvel</a>
+                    <div class="card-content">
+                        <h3>🚗 Veículos</h3>
+                        <p>Planos sob medida para conquistar seu carro novo ou renovar sua frota com parcelas acessíveis.</p>
+                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Veículo</a>
                     </div>
                 </div>
 
-                <div class="card-premium">
-                    <div class="card-img-wrapper">
-                        <span class="card-badge"><i class="fa-solid fa-house"></i> Conquista</span>
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=400" alt="Casas e Imóveis de alto padrão">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=400" alt="Imóveis e Casas">
                     </div>
-                    <div class="card-body">
-                        <h3>Imóvel</h3>
-                        <p>Planeje a compra de imóveis residenciais, comerciais, terrenos ou reformas estruturadas sem juros bancários.</p>
+                    <div class="card-content">
+                        <h3>🏠 Imobiliário</h3>
+                        <p>Programe a compra de sua casa própria, terrenos comerciais ou construções sem juros abusivos.</p>
                         <a href="https://wa.me/seu-numero" class="btn-card">Simular Imóvel</a>
                     </div>
                 </div>
 
-                <div class="card-premium">
-                    <div class="card-img-wrapper">
-                        <span class="card-badge"><i class="fa-solid fa-tractor"></i> Produção</span>
-                        <img src="https://images.unsplash.com/photo-1530268578403-bf6e898031ee?auto=format&fit=crop&q=80&w=400" alt="Maquinário Agrícola e Pesados">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&q=80&w=400" alt="Caminhões e Tratores">
                     </div>
-                    <div class="card-body">
-                        <h3>Pesados e Agrícola</h3>
-                        <p>Linhas de crédito para caminhões, implementos rodoviários, maquinários agrícolas modernos e projetos de apicultura.</p>
+                    <div class="card-content">
+                        <h3>🚜 Pesados e Agrícola</h3>
+                        <p>Créditos estruturados para caminhões, maquinário agrícola, reformas e projetos de apicultura.</p>
                         <a href="https://wa.me/seu-numero" class="btn-card">Simular Pesados</a>
                     </div>
                 </div>
 
-                <div class="card-premium">
-                    <div class="card-img-wrapper">
-                        <span class="card-badge"><i class="fa-solid fa-chart-line"></i> Rentabilidade</span>
-                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400" alt="Gráficos Financeiros e Investimentos">
+                <div class="service-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1611974717482-4828c2424b9a?auto=format&fit=crop&q=80&w=400" alt="Gráficos Financeiros">
                     </div>
-                    <div class="card-body">
-                        <h3>Investimentos</h3>
-                        <p>Potencialize seu patrimônio financeiro por meio da alavancagem planejada e consultoria em consórcios.</p>
-                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Investimento</a>
+                    <div class="card-content">
+                        <h3>📈 Planejamento Patrimonial</h3>
+                        <p>Alavanque seu capital e construa um patrimônio sólido utilizando consórcio estratégico.</p>
+                        <a href="https://wa.me/seu-numero" class="btn-card">Simular Investimentos</a>
                     </div>
                 </div>
             </div>
@@ -531,26 +403,25 @@
     <section id="sobre" class="about-section">
         <div class="container about-grid">
             <div class="about-content">
-                <h2>Especialistas em realizar <span class="highlight">grandes conquistas</span><span class="gold-detail">.</span></h2>
-                <p>A LR Assessoria Financeira nasceu com o firme propósito de direcionar nossos clientes rumo aos seus objetivos financeiros de longo prazo. Através de um ecossistema transparente, seguro e inteiramente focado no atendimento humanizado, encontramos o plano ideal para as suas necessidades estruturais.</p>
-                <p>Unimos a inovação das maiores fintechs com a solidez que o mercado exige.</p>
+                <h2>Especialistas em <span class="highlight">realizar conquistas</span>.</h2>
+                <p>A LR Consórcios & Assessoria Financeira nasceu com o propósito de ajudar pessoas a conquistarem seus objetivos através de soluções inteligentes em consórcios. Atuamos com transparência, segurança e atendimento humanizado para oferecer as melhores oportunidades do mercado.</p>
             </div>
-            <div class="results-mini-grid">
-                <div class="result-box">
+            <div class="metrics-grid">
+                <div class="metric-box">
                     <h4>+5 Anos</h4>
-                    <p>De atuação sólida e segura no mercado financeiro.</p>
+                    <p>De mercado e solidez empresarial.</p>
                 </div>
-                <div class="result-box">
-                    <h4>+1.2k</h4>
-                    <p>Clientes assessorados e satisfeitos em todo o Brasil.</p>
+                <div class="metric-box">
+                    <h4>+1.200</h4>
+                    <p>Clientes atendidos com excelência.</p>
                 </div>
-                <div class="result-box">
+                <div class="metric-box">
                     <h4>R$ 45M+</h4>
-                    <p>Em créditos devidamente aprovados e estruturados.</p>
+                    <p>Em créditos aprovados e consolidados.</p>
                 </div>
-                <div class="result-box">
-                    <h4>99.4%</h4>
-                    <p>Taxa de satisfação interna e fidelidade dos investidores.</p>
+                <div class="metric-box">
+                    <h4>100%</h4>
+                    <p>Transparência em todo processo.</p>
                 </div>
             </div>
         </div>
@@ -558,20 +429,20 @@
 
     <footer id="contato" class="footer">
         <div class="container">
-            <div class="footer-flex">
-                <div class="footer-brand">
-                    <h3>LR <span class="highlight">Assessoria Financeira</span></h3>
-                    <p>Segurança, transparência e modernidade em planejamento patrimonial.</p>
+            <div class="footer-content">
+                <div>
+                    <h3>LR Consórcios & Assessoria Financeira</h3>
+                    <p>Soluções modernas e credibilidade fintech para o seu patrimônio.</p>
                 </div>
-                <div class="footer-action">
+                <div>
                     <a href="https://wa.me/seu-numero" target="_blank" class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> Chamar Atendimento Especializado
+                        <i class="fa-brands fa-whatsapp"></i> Atendimento via WhatsApp
                     </a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LR Assessoria. Todos os direitos reservados. Horário de Atendimento: Seg a Sex, das 09h às 18h.</p>
-                <p>Desenvolvido com Rigor de Autoridade e Confiança.</p>
+                <p>&copy; 2026 LR Consórcios & Assessoria. Horário: Seg a Sex das 09h às 18h.</p>
+                <p>Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
