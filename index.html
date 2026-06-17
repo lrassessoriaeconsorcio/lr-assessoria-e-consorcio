@@ -184,55 +184,106 @@
             object-fit: cover;
         }
 
-        /* SEÇÃO COMPARATIVA: FINANCIAMENTO VS PLANO DE CRÉDITO */
+        /* SEÇÃO COMPARATIVA PREMIUM (REMODELADA COM CARDS GLASS) */
         .comparison-section {
             padding: 80px 0;
         }
 
-        .comparison-box {
-            background: var(--glass-card);
+        .section-title {
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 38px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 45px;
+        }
+
+        .comparison-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .comp-card {
+            background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-radius: 32px;
-            border: 1px solid var(--glass-border);
-            padding: 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .table-responsive {
-            overflow-x: auto;
-            margin-top: 35px;
-            border-radius: 16px;
+        .comp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
         }
 
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            background: rgba(255, 255, 255, 0.5);
+        /* Destaque visual na coluna de Consórcio */
+        .comp-card.featured {
+            background: rgba(255, 255, 255, 0.75);
+            border: 2px solid var(--brand-lilac);
+            box-shadow: 0 15px 40px rgba(108, 99, 255, 0.12);
         }
 
-        .comparison-table th, .comparison-table td {
-            padding: 18px 24px;
+        .comp-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 1px solid rgba(74, 58, 255, 0.1);
-            font-size: 15px;
         }
 
-        .comparison-table th {
-            background: rgba(74, 58, 255, 0.1);
+        .comp-header i {
+            font-size: 28px;
+        }
+
+        .comp-header .icon-group {
+            display: flex;
+            gap: 8px;
+            color: var(--brand-lilac);
+        }
+
+        .comp-header h3 {
             font-family: var(--font-title);
+            font-size: 22px;
+        }
+
+        .comp-item {
+            margin-bottom: 22px;
+        }
+
+        .comp-item h4 {
+            font-family: var(--font-title);
+            font-size: 15px;
             color: var(--text-dark);
-            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        .text-danger {
-            color: #d63031;
-            font-weight: 700;
+        .comp-item p {
+            font-size: 14px;
+            color: var(--text-muted);
         }
 
-        .text-success {
-            color: #27ae60;
-            font-weight: 700;
+        .comp-card.featured .comp-item h4 {
+            color: var(--brand-purple);
+        }
+
+        .strategy-note {
+            text-align: center;
+            margin-top: 35px;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--brand-purple);
         }
 
         .simulation-trigger-box {
@@ -244,17 +295,12 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        .simulation-trigger-box h4 {
-            font-family: var(--font-title);
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
         .simulation-btn-group {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            margin-top: 15px;
         }
 
         .btn-sim-danger {
@@ -287,21 +333,6 @@
             padding: 80px 0;
         }
 
-        .section-title {
-            text-align: center;
-            font-family: var(--font-title);
-            font-size: 38px;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 55px;
-        }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -315,7 +346,7 @@
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: 0.4s ease;
             border: 1px solid var(--glass-border);
         }
 
@@ -456,8 +487,8 @@
         }
 
         @media (max-width: 992px) {
-            .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-buttons { justify-content: center; }
+            .hero-grid, .about-grid, .comparison-cards-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-buttons, .comp-header { justify-content: center; }
             .hero-image-wrapper { height: 350px; order: -1; }
         }
     </style>
@@ -471,7 +502,7 @@
             </div>
             <nav class="menu">
                 <a href="#inicio">Início</a>
-                <a href="#comparativo">Financiamento vs Consórcio</a>
+                <a href="#comparativo">Comparativo</a>
                 <a href="#solucoes">Soluções</a>
                 <a href="#sobre">Quem Somos</a>
                 <a href="#contato" class="btn-nav">Falar com Consultor</a>
@@ -497,57 +528,88 @@
 
     <section id="comparativo" class="comparison-section">
         <div class="container">
-            <div class="comparison-box">
-                <h2 class="section-title">Financiamento Tradicional vs <span class="highlight">Plano de Crédito (Consórcio)</span></h2>
-                <p class="section-subtitle" style="margin-bottom: 20px;">Entenda por que os bancos lucram e como você pode economizar de verdade planejando o seu patrimônio.</p>
+            <h2 class="section-title">Financiamento vs <span class="highlight">Consórcio Planejado</span></h2>
+            <p class="section-subtitle">Analise as condições e descubra o melhor caminho para construir seu patrimônio.</p>
+            
+            <div class="comparison-cards-grid">
                 
-                <div class="table-responsive">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Indicador Estrutural</th>
-                                <th>Financiamento Bancário</th>
-                                <th>Plano de Crédito Inteligente</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Taxa de Juros</strong></td>
-                                <td class="text-danger">Taxas Abusivas (9% a 45% ao ano)</td>
-                                <td class="text-success">Zero Juros (Apenas taxa Adm diluída)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Custo Final do Bem</strong></td>
-                                <td class="text-danger">Você paga o equivalente a 2 ou 3 bens</td>
-                                <td class="text-success">Apenas o valor real do bem + taxas baixas</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Entrada Inicial</strong></td>
-                                <td class="text-danger">Exige de 20% a 30% do valor total à vista</td>
-                                <td class="text-success">Zero de entrada obrigatória</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Burocracia de Crédito</strong></td>
-                                <td class="text-danger">Análise rígida e travada no ato da abertura</td>
-                                <td class="text-success">Aprovação flexível e simplificada</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="comp-card">
+                    <div class="comp-header">
+                        <i class="fa-solid fa-bank" style="color: #d63031;"></i>
+                        <h3>Financiamento</h3>
+                    </div>
+                    
+                    <div class="comp-item">
+                        <h4>Taxa de Juros</h4>
+                        <p>Juros elevados e custo acumulado ao longo dos anos.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Custo Final</h4>
+                        <p>Maior valor total pago devido aos juros.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Entrada</h4>
+                        <p>Geralmente exige entrada elevada.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Análise de Crédito</h4>
+                        <p>Processo mais rígido e burocrático.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Flexibilidade</h4>
+                        <p>Condições limitadas pelo banco.</p>
+                    </div>
                 </div>
 
-                <div class="simulation-trigger-box">
-                    <h4>Faça a sua simulação comparativa e tome a melhor decisão:</h4>
-                    <div class="simulation-btn-group">
-                        <a href="https://wa.me/seu-numero?text=Quero+simular+um+Financiamento" class="btn-sim-danger" target="_blank">
-                            <i class="fa-solid fa-calculator"></i> Simular Financiamento
-                        </a>
-                        <a href="https://wa.me/seu-numero?text=Quero+simular+um+Plano+de+Credito+Consorcio" class="btn-sim-success" target="_blank">
-                            <i class="fa-solid fa-gem"></i> Simular Plano de Crédito
-                        </a>
+                <div class="comp-card featured">
+                    <div class="comp-header">
+                        <div class="icon-group">
+                            <i class="fa-solid fa-house"></i>
+                            <i class="fa-solid fa-car"></i>
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>✅ Consórcio Planejado</h3>
+                    </div>
+                    
+                    <div class="comp-item">
+                        <h4>Taxa de Juros</h4>
+                        <p>Sem juros bancários, apenas taxa administrativa diluída.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Custo Final</h4>
+                        <p>Planejamento financeiro com melhor custo-benefício.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Entrada</h4>
+                        <p>Planos flexíveis com entrada facilitada e opções personalizadas.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Análise de Crédito</h4>
+                        <p>Processo simplificado e acompanhamento especializado.</p>
+                    </div>
+                    <div class="comp-item">
+                        <h4>Flexibilidade</h4>
+                        <p>Diversas estratégias de contemplação e uso do crédito.</p>
                     </div>
                 </div>
 
             </div>
+
+            <p class="strategy-note">
+                <i class="fa-solid fa-circle-check"></i> Trabalhamos com estratégias de contemplação, lance e planos personalizados para cada perfil.
+            </p>
+
+            <div class="simulation-trigger-box">
+                <div class="simulation-btn-group">
+                    <a href="https://wa.me/seu-numero?text=Quero+simular+um+Financiamento" class="btn-sim-danger" target="_blank">
+                        <i class="fa-solid fa-calculator"></i> Simular Financiamento
+                    </a>
+                    <a href="https://wa.me/seu-numero?text=Quero+simular+um+Consorcio+Planejado" class="btn-sim-success" target="_blank">
+                        <i class="fa-solid fa-gem"></i> Simular Consórcio
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
