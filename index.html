@@ -11,13 +11,14 @@
     
     <style>
         :root {
-            --bg-lilac: #f3effa; /* Fundo lilás claro geral */
-            --brand-lilac: #6C63FF; /* Lilás moderno */
-            --brand-purple: #4A3AFF; /* Roxo escuro fintech */
-            --brand-gold: #D4AF37; /* Dourado suave premium */
-            --text-dark: #1e2229;
-            --text-muted: #57606f;
-            --white: #ffffff;
+            --bg-lilac: #e3daf7; /* Fundo lilás claro bem definido */
+            --brand-lilac: #6C63FF; 
+            --brand-purple: #4A3AFF; 
+            --brand-gold: #D4AF37; 
+            --text-dark: #1e1b29;
+            --text-muted: #4e4a5c;
+            --white-glass: rgba(255, 255, 255, 0.45); /* Efeito vidro */
+            --white-glass-intense: rgba(255, 255, 255, 0.75);
             --gradient-lilac: linear-gradient(135deg, #6C63FF 0%, #4A3AFF 100%);
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Poppins', sans-serif;
@@ -32,7 +33,7 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-lilac);
+            background: linear-gradient(180deg, #e3daf7 0%, #d4caf0 100%);
             color: var(--text-dark);
             line-height: 1.6;
         }
@@ -44,7 +45,7 @@
         }
 
         span.highlight {
-            color: var(--brand-lilac);
+            color: var(--brand-purple);
             font-weight: 800;
         }
 
@@ -52,16 +53,17 @@
             color: var(--brand-gold);
         }
 
-        /* NAVBAR (Sem diamante) */
+        /* NAVBAR (Efeito Vidro) */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: rgba(227, 218, 247, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(108, 99, 255, 0.08);
-            border-bottom: 2px solid var(--brand-lilac);
+            border-bottom: 1px solid rgba(108, 99, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
         }
 
         .navbar .container {
@@ -74,7 +76,6 @@
             font-family: var(--font-title);
             font-size: 20px;
             font-weight: 800;
-            color: var(--text-dark);
         }
 
         .menu a {
@@ -87,21 +88,21 @@
         }
 
         .menu a:hover {
-            color: var(--brand-lilac);
+            color: var(--brand-purple);
         }
 
         .btn-nav {
             background: var(--gradient-lilac);
-            color: var(--white) !important;
+            color: white !important;
             padding: 10px 22px;
             border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
         }
 
         /* HERO SECTION */
         .hero-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--white) 0%, var(--bg-lilac) 100%);
-            border-bottom: 3px solid var(--brand-lilac);
+            background: transparent;
         }
 
         .hero-grid {
@@ -109,6 +110,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
+        }
+
+        .hero-content {
+            background: var(--white-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(108, 99, 255, 0.05);
         }
 
         .hero-content h1 {
@@ -131,7 +142,7 @@
 
         .btn-primary {
             background: var(--gradient-lilac);
-            color: var(--white);
+            color: white;
             text-decoration: none;
             padding: 16px 36px;
             border-radius: 14px;
@@ -154,13 +165,12 @@
         .hero-image img {
             width: 100%;
             border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(74, 58, 255, 0.15);
         }
 
-        /* SEÇÃO DE BENEFÍCIOS (FUNDO LILÁS DESTACADO) */
+        /* SEÇÃO DE PRODUTOS */
         .services-section {
             padding: 90px 0;
-            background-color: var(--bg-lilac);
         }
 
         .section-title {
@@ -177,12 +187,14 @@
         }
 
         .service-card {
-            background: var(--white);
+            background: var(--white-glass-intense);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0,0,0,0.03);
             transition: 0.3s;
-            border: 1px solid rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .service-card:hover {
@@ -217,7 +229,7 @@
             display: block;
             text-align: center;
             text-decoration: none;
-            background: var(--bg-lilac);
+            background: rgba(108, 99, 255, 0.1);
             color: var(--brand-purple);
             padding: 12px;
             border-radius: 12px;
@@ -227,14 +239,12 @@
 
         .service-card:hover .btn-card {
             background: var(--gradient-lilac);
-            color: var(--white);
+            color: white;
         }
 
         /* QUEM SOMOS */
         .about-section {
-            background-color: var(--white);
             padding: 90px 0;
-            border-radius: 40px;
         }
 
         .about-grid {
@@ -242,6 +252,15 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
+        }
+
+        .about-content {
+            background: var(--white-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .about-content h2 {
@@ -262,10 +281,13 @@
         }
 
         .metric-box {
-            background: var(--bg-lilac);
+            background: var(--white-glass-intense);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 16px;
             border-left: 4px solid var(--brand-gold);
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .metric-box h4 {
@@ -276,10 +298,11 @@
 
         /* RODAPÉ */
         .footer {
-            background-color: var(--white);
+            background-color: rgba(227, 218, 247, 0.8);
+            backdrop-filter: blur(10px);
             padding: 50px 0 30px 0;
             margin-top: 60px;
-            border-top: 1px solid rgba(108, 99, 255, 0.1);
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
         }
 
         .footer-content {
@@ -289,12 +312,12 @@
             flex-wrap: wrap;
             gap: 20px;
             padding-bottom: 30px;
-            border-bottom: 1px solid var(--bg-lilac);
+            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
         }
 
         .btn-whatsapp {
             background-color: #25D366;
-            color: var(--white);
+            color: white;
             text-decoration: none;
             padding: 14px 28px;
             border-radius: 50px;
@@ -343,7 +366,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Planejamento e Crescimento Financeiro">
+                <img src="https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?auto=format&fit=crop&q=80&w=600" alt="Crescimento de Patrimônio Estratégico">
             </div>
         </div>
     </section>
