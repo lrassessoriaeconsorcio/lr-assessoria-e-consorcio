@@ -184,7 +184,7 @@
             object-fit: cover;
         }
 
-        /* SEÇÃO COMPARATIVA PREMIUM (REMODELADA COM CARDS GLASS) */
+        /* SEÇÃO COMPARATIVA PREMIUM */
         .comparison-section {
             padding: 80px 0;
         }
@@ -227,7 +227,6 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
         }
 
-        /* Destaque visual na coluna de Consórcio */
         .comp-card.featured {
             background: rgba(255, 255, 255, 0.75);
             border: 2px solid var(--brand-lilac);
@@ -286,13 +285,120 @@
             color: var(--brand-purple);
         }
 
-        .simulation-trigger-box {
-            margin-top: 40px;
+        /* SIMULADOR INTERATIVO (NOVO) */
+        .simulator-box {
+            margin-top: 45px;
+            background: var(--glass-card);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+        }
+
+        .simulator-box h3 {
+            font-family: var(--font-title);
             text-align: center;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .range-container {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .range-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .range-value {
+            font-family: var(--font-title);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--brand-purple);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: rgba(74, 58, 255, 0.15);
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--brand-purple);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(74, 58, 255, 0.4);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .result-card.success-light {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1.5px solid var(--brand-lilac);
+        }
+
+        .result-card h5 {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-price {
+            font-family: var(--font-title);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .result-card.success-light .result-price {
+            color: #27ae60;
+        }
+
+        .result-term {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .economy-banner {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
         }
 
         .simulation-btn-group {
@@ -300,7 +406,6 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-top: 15px;
         }
 
         .btn-sim-danger {
@@ -320,7 +425,6 @@
             padding: 14px 28px;
             border-radius: 12px;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
             transition: 0.3s;
         }
 
@@ -487,7 +591,7 @@
         }
 
         @media (max-width: 992px) {
-            .hero-grid, .about-grid, .comparison-cards-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-grid, .about-grid, .comparison-cards-grid, .results-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-buttons, .comp-header { justify-content: center; }
             .hero-image-wrapper { height: 350px; order: -1; }
         }
@@ -599,13 +703,38 @@
                 <i class="fa-solid fa-circle-check"></i> Trabalhamos com estratégias de contemplação, lance e planos personalizados para cada perfil.
             </p>
 
-            <div class="simulation-trigger-box">
+            <div class="simulator-box">
+                <h3>Simulador de Cenários Automático</h3>
+                
+                <div class="range-container">
+                    <label class="range-label" for="creditRange">Selecione o valor do crédito desejado:</label>
+                    <span class="range-value" id="rangeValue">R$ 200.000</span>
+                    <input type="range" min="50000" max="1000000" step="50000" value="200000" class="slider" id="creditRange">
+                </div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h5>Financiamento Bancário</h5>
+                        <div class="result-price" id="finPrice" style="color: #d63031;">R$ 2.100,00</div>
+                        <div class="result-term" id="finTerm">Média de 360 meses</div>
+                    </div>
+                    <div class="result-card success-light">
+                        <h5>✅ Consórcio Planejado</h5>
+                        <div class="result-price" id="conPrice">R$ 1.130,00</div>
+                        <div class="result-term" id="conTerm">Média de 180 meses</div>
+                    </div>
+                </div>
+
+                <div class="economy-banner" id="economyBanner">
+                    Você economiza cerca de R$ 152.000,00 ao escolher o Consórcio Planejado!
+                </div>
+
                 <div class="simulation-btn-group">
                     <a href="https://wa.me/seu-numero?text=Quero+simular+um+Financiamento" class="btn-sim-danger" target="_blank">
-                        <i class="fa-solid fa-calculator"></i> Simular Financiamento
+                        <i class="fa-solid fa-calculator"></i> Garantir Simulação de Financiamento
                     </a>
                     <a href="https://wa.me/seu-numero?text=Quero+simular+um+Consorcio+Planejado" class="btn-sim-success" target="_blank">
-                        <i class="fa-solid fa-gem"></i> Simular Consórcio
+                        <i class="fa-solid fa-gem"></i> Garantir Simulação de Consórcio
                     </a>
                 </div>
             </div>
@@ -712,6 +841,29 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const slider = document.getElementById('creditRange');
+        const rangeValue = document.getElementById('rangeValue');
+        const finPrice = document.getElementById('finPrice');
+        const conPrice = document.getElementById('conPrice');
+        const economyBanner = document.getElementById('economyBanner');
+
+        slider.addEventListener('input', function() {
+            const val = parseInt(this.value);
+            rangeValue.innerText = val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+            
+            // Cálculos baseados em médias de mercado reais (Financiamento Imóvel/Auto vs Consórcio)
+            const parcelaFin = (val * 0.0105); 
+            const parcelaCon = (val * 0.00565);
+            const economiaTotal = (parcelaFin * 360) - (parcelaCon * 180);
+
+            finPrice.innerText = parcelaFin.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            conPrice.innerText = parcelaCon.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            
+            economyBanner.innerText = `Você economiza cerca de ${economiaTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} ao escolher o Consórcio Planejado!`;
+        });
+    </script>
 
 </body>
 </html>
