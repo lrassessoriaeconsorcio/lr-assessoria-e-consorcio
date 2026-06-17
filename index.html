@@ -685,12 +685,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="tipoCredito">Tipo de Crédito</label>
-                                <select id="tipoCredito" required>
+                                <select id="tipoCredito" required onchange="atualizarOpcoesPrazo()">
                                     <option value="Veículo">Veículo 🚗</option>
                                     <option value="Imóvel">Imóvel 🏡</option>
                                     <option value="Caminhão">Caminhão 🚛</option>
                                     <option value="Máquina Agrícola">Máquina Agrícola 🚜</option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prazoDesejado">Prazo Desejado</label>
+                                <select id="prazoDesejado" required>
+                                    </select>
                             </div>
                             <div class="form-group">
                                 <label for="valorDesejado">Valor Desejado</label>
@@ -711,8 +716,8 @@
                                 <label for="parcelaDesejada">Parcela Máxima Alvo</label>
                                 <input type="text" id="parcelaDesejada" required placeholder="R$ 0,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
-                            <div class="form-group">
-                                <label for="possuiRestricao">Nome com Restrição (SPC/SERASA)?</label>
+                            <div class="form-group full-width">
+                                <label for="possuiRestricao">Nome com Alguma Restrição (SPC/SERASA)?</label>
                                 <select id="possuiRestricao" required>
                                     <option value="Não">Não</option>
                                     <option value="Sim">Sim</option>
@@ -734,8 +739,8 @@
                             <h4>Sua Estimativa Estruturada</h4>
                         </div>
                         
-                        <div id="statusRestricaoBox" style="display:none; background: #fff3cd; color: #856404; padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid #ffeeba; line-height: 1.4;">
-                            ⚠️ <strong>Aviso de Perfil:</strong> CPFs com restrição possuem reprovação imediata no financiamento bancário convencional. O consórcio estruturado surge como a única via inteligente para sua aprovação patrimonial!
+                        <div id="statusRestricaoBox" style="display:none; background: #eef3ff; color: #1e3a8a; padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid #bfdbfe; line-height: 1.4;">
+                            ℹ️ <strong>Nota do Consultor:</strong> Perfis com restrições enfrentam juros severos ou recusa direta em financiamentos bancários. O consórcio é o formato ideal para blindar sua aprovação. Solicite os grupos facilitados abaixo.
                         </div>
 
                         <div class="result-metrics">
@@ -748,7 +753,7 @@
                                 <strong id="resParcela">R$ 0,00</strong>
                             </div>
                             <div class="metric-card">
-                                <span>Prazo Médio</span>
+                                <span>Prazo Selecionado</span>
                                 <strong id="resPrazo">0 meses</strong>
                             </div>
                             <div class="metric-card">
@@ -892,7 +897,32 @@
     </footer>
 
     <script>
-        // Função de Máscara Monetária Dinâmica (Garante os pontos e vírgula na digitação)
+        // Opções de prazos reais de acordo com cada tipo de crédito
+        const prazosPorSegmento = {
+            "Veículo": [36, 48, 60, 72, 80, 100],
+            "Imóvel": [120, 150, 180, 200, 240],
+            "Caminhão": [60, 80, 100, 120, 140],
+            "Máquina Agrícola": [60, 80, 100, 120]
+        };
+
+        function atualizarOpcoesPrazo() {
+            const tipo = document.getElementById("tipoCredito").value;
+            const selectPrazo = document.getElementById("prazoDesejado");
+            selectPrazo.innerHTML = "";
+
+            prazosPorSegmento[tipo].forEach(meses => {
+                let opt = document.createElement("option");
+                opt.value = meses;
+                opt.innerText = `${meses} meses`;
+                selectPrazo.appendChild(opt);
+            });
+        }
+
+        // Inicializa os prazos na primeira execução do site
+        window.onload = function() {
+            atualizarOpcoesPrazo();
+        };
+
         function aplicarMascaraMoeda(input) {
             let valor = input.value.replace(/\D/g, "");
             valor = (valor / 100).toFixed(2) + "";
@@ -901,7 +931,6 @@
             input.value = "R$ " + valor;
         }
 
-        // Converte string monetária formatada de volta para número puro do JavaScript
         function converterParaNumero(valorTexto) {
             if (!valorTexto) return 0;
             let limpo = valorTexto.replace(/[^\d,]/g, "").replace(",", ".");
@@ -924,44 +953,42 @@
         function calcularSimulacao(event) {
             event.preventDefault();
 
-            // Captura e Conversão Numérica Própria
+            // Resgate dos dados coletados
             const nome = document.getElementById('nome').value;
             const whatsapp = document.getElementById('whatsapp').value;
             const tipoCredito = document.getElementById('tipoCredito').value;
+            const prazo = parseInt(document.getElementById('prazoDesejado').value) || 120;
             const valorDesejado = converterParaNumero(document.getElementById('valorDesejado').value);
             const possuiEntrada = document.getElementById('possuiEntrada').value;
             const valorEntrada = converterParaNumero(document.getElementById('valorEntrada').value);
             const parcelaDesejada = converterParaNumero(document.getElementById('parcelaDesejada').value);
             const possuiRestricao = document.getElementById('possuiRestricao').value;
 
-            // Lógica de Amortização
             const saldoLiquido = valorDesejado - valorEntrada;
-            let prazo = 180;
-            if (tipoCredito === 'Veículo') prazo = 80;
-            if (tipoCredito === 'Caminhão' || tipoCredito === 'Máquina Agrícola') prazo = 120;
 
+            // Alíquota padrão diluída de taxas administrativas do consórcio
             const taxaAdmTotal = 0.15; 
             const parcelaConsorcio = (saldoLiquido * (1 + taxaAdmTotal)) / prazo;
 
-            // Nova Regra de Juros para Financiamentos Bancários Comparados
+            // Determinação exata da taxa comparativa de juros solicitada
             let taxaJurosFinanciamento = 0;
             if (tipoCredito === 'Veículo') {
-                taxaJurosFinanciamento = 0.20; // 19% a 21% mercado de veículos
+                taxaJurosFinanciamento = 0.20; // Fixa a taxa média solicitada (19% a 21%)
             } else {
                 if (valorDesejado <= 200000) {
                     taxaJurosFinanciamento = 0.23; // Menor que 24%
                 } else {
-                    taxaJurosFinanciamento = 0.26; // Faixa de 25% a 27%
+                    taxaJurosFinanciamento = 0.26; // Entre 25% e 27%
                 }
             }
 
-            // Cálculo da perda financeira real do cliente no financiamento comum
-            const custoFinanciamentoTotal = saldoLiquido * (1 + (taxaJurosFinanciamento * (prazo / 12) * 0.68));
+            // Cálculo matemático do impacto de juros composto/amortizado simplificado para o prazo selecionado
+            const custoFinanciamentoTotal = saldoLiquido * (1 + (taxaJurosFinanciamento * (prazo / 12) * 0.7));
             const custoConsorcioTotal = saldoLiquido * (1 + taxaAdmTotal);
             let economiaReferencial = custoFinanciamentoTotal - custoConsorcioTotal;
-            if (economiaReferencial < 0) economiaReferencial = valorDesejado * 0.40;
+            if (economiaReferencial < 0) economiaReferencial = valorDesejado * 0.45;
 
-            // Ativação e Renderização dos Campos com Formatação Estrita
+            // Exibição dos resultados na interface
             document.getElementById('placeholderView').style.display = 'none';
             document.getElementById('activeView').style.display = 'block';
 
@@ -972,29 +999,30 @@
             const boxRestricao = document.getElementById('statusRestricaoBox');
             const boxEconomia = document.getElementById('resEconomia');
 
-            // Gerenciamento Condicional do Quadro de Restrição
+            // Gerenciamento comercial inteligente para perfis com restrição
             if (possuiRestricao === 'Sim') {
                 boxRestricao.style.display = 'block';
-                boxEconomia.style.background = '#e74c3c';
-                boxEconomia.innerText = `Financiamento Bancário Indisponível: Perfil reprovado devido à restrição cadastral ativa.`;
+                boxEconomia.style.background = '#e67e22'; // Tom laranja amigável de alerta comercial
+                boxEconomia.innerText = `O financiamento tradicional geraria recusa de crédito. O consórcio garante sua aquisição!`;
             } else {
                 boxRestricao.style.display = 'none';
                 boxEconomia.style.background = '#27ae60';
-                boxEconomia.innerText = `Economia estimada de ${economiaReferencial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })} sobre o financiamento bancário!`;
+                boxEconomia.innerText = `Economia estimada de ${economiaReferencial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })} sobre taxas bancárias comuns!`;
             }
 
-            // Formatação do fluxo de mensagem integrada para o WhatsApp
-            const textoMensagem = `Olá, gostaria de uma proposta personalizada com base na simulação realizada:\n\n` +
+            // Construção do texto formatado para o consultor receber no WhatsApp
+            const textoMensagem = `Olá, realizei uma simulação completa no site e quero receber o plano ideal:\n\n` +
                 `*Nome:* ${nome}\n` +
                 `*WhatsApp:* ${whatsapp}\n` +
-                `*Segmento:* ${tipoCredito}\n` +
-                `*Crédito Solicitado:* R$ ${valorDesejado.toLocaleString('pt-BR')}\n` +
-                `*Entrada Declarada:* R$ ${valorEntrada.toLocaleString('pt-BR')} (Possui: ${possuiEntrada})\n` +
+                `*Tipo de Crédito:* ${tipoCredito}\n` +
+                `*Prazo Pretendido:* ${prazo} meses\n` +
+                `*Crédito Desejado:* R$ ${valorDesejado.toLocaleString('pt-BR')}\n` +
+                `*Valor de Entrada:* R$ ${valorEntrada.toLocaleString('pt-BR')} (Possui: ${possuiEntrada})\n` +
                 `*Parcela Alvo do Cliente:* R$ ${parcelaDesejada.toLocaleString('pt-BR')}\n` +
-                `*Restrição Cadastral (SPC/SERASA):* ${possuiRestricao}\n\n` +
-                `*Cenário Gerado:* Parcela Estimada de R$ ${parcelaConsorcio.toLocaleString('pt-BR', {maximumFractionDigits:2})} em ${prazo} meses (Zero Juros).`;
+                `*Restrição Ativa (SPC/SERASA):* ${possuiRestricao}\n\n` +
+                `*Análise do Simulador:* Parcela calculada em R$ ${parcelaConsorcio.toLocaleString('pt-BR', {maximumFractionDigits:2})} no Consórcio Livre de Juros.`;
 
-            // Insira o número oficial da sua empresa com o DDD onde diz 'seu-numero' abaixo
+            // Configura o Link do WhatsApp com a mensagem estruturada
             document.getElementById('whatsappLink').href = `https://wa.me/seu-numero?text=${encodeURIComponent(textoMensagem)}`;
         }
     </script>
