@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-lilac: #e3daf7; /* Fundo lilás claro bem definido */
-            --brand-lilac: #6C63FF; 
-            --brand-purple: #4A3AFF; 
-            --brand-gold: #D4AF37; 
-            --text-dark: #1e1b29;
-            --text-muted: #4e4a5c;
-            --white-glass: rgba(255, 255, 255, 0.45); /* Efeito vidro */
-            --white-glass-intense: rgba(255, 255, 255, 0.75);
-            --gradient-lilac: linear-gradient(135deg, #6C63FF 0%, #4A3AFF 100%);
+            --bg-lilac: #ded3f5; /* Tom de lilás moderno e nítido para o fundo global */
+            --brand-purple: #4A3AFF; /* Roxo Fintech principal */
+            --brand-lilac: #6C63FF; /* Lilás elétrico */
+            --brand-gold: #D4AF37; /* Dourado premium */
+            --text-dark: #0f0c1b;
+            --text-muted: #3a354a;
+            --glass-card: rgba(255, 255, 255, 0.55); /* Efeito vidro translúcido */
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --gradient-primary: linear-gradient(135deg, #4A3AFF 0%, #6C63FF 100%);
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Poppins', sans-serif;
         }
@@ -33,13 +33,13 @@
 
         body {
             font-family: var(--font-body);
-            background: linear-gradient(180deg, #e3daf7 0%, #d4caf0 100%);
+            background-color: var(--bg-lilac);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -51,19 +51,20 @@
 
         span.gold {
             color: var(--brand-gold);
+            font-weight: 700;
         }
 
-        /* NAVBAR (Efeito Vidro) */
+        /* NAVBAR PREMIUM */
         .navbar {
-            background-color: rgba(227, 218, 247, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 20px 0;
+            background-color: rgba(222, 211, 245, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 22px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(108, 99, 255, 0.2);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(74, 58, 255, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
         }
 
         .navbar .container {
@@ -74,17 +75,18 @@
 
         .logo h2 {
             font-family: var(--font-title);
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .menu a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 600;
-            margin-left: 25px;
+            margin-left: 28px;
             font-size: 14px;
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
 
         .menu a:hover {
@@ -92,41 +94,41 @@
         }
 
         .btn-nav {
-            background: var(--gradient-lilac);
+            background: var(--gradient-primary);
             color: white !important;
-            padding: 10px 22px;
+            padding: 11px 24px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
         }
 
-        /* HERO SECTION */
+        /* HERO SECTIONS (GLASS DESIGN) */
         .hero-section {
-            padding: 100px 0;
-            background: transparent;
+            padding: 90px 0;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
             align-items: center;
         }
 
         .hero-content {
-            background: var(--white-glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 8px 32px rgba(108, 99, 255, 0.05);
+            background: var(--glass-card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
         .hero-content h1 {
             font-family: var(--font-title);
-            font-size: 46px;
+            font-size: 48px;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
         }
 
         .hero-content p {
@@ -138,113 +140,155 @@
         .hero-buttons {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: var(--gradient-lilac);
+            background: var(--gradient-primary);
             color: white;
             text-decoration: none;
-            padding: 16px 36px;
-            border-radius: 14px;
+            padding: 16px 38px;
+            border-radius: 16px;
             font-weight: 600;
-            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
-            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(74, 58, 255, 0.25);
+            transition: 0.3s ease;
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(74, 58, 255, 0.35);
         }
 
         .btn-secondary {
             color: var(--brand-purple);
             text-decoration: none;
             font-weight: 600;
-            align-self: center;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
         }
 
-        .hero-image img {
+        .btn-secondary:hover {
+            gap: 12px;
+        }
+
+        .hero-image-wrapper {
             width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(74, 58, 255, 0.15);
+            height: 450px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(74, 58, 255, 0.15);
+            border: 1px solid var(--glass-border);
         }
 
-        /* SEÇÃO DE PRODUTOS */
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* SEÇÃO DE PRODUTOS / SEGMENTOS */
         .services-section {
-            padding: 90px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
             font-family: var(--font-title);
             font-size: 38px;
-            margin-bottom: 50px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 55px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background: var(--white-glass-intense);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            transition: 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid var(--glass-border);
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(74, 58, 255, 0.15);
         }
 
-        .card-image img {
+        .card-image-box {
             width: 100%;
-            height: 210px;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-image-box img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            transition: 0.4s ease;
+        }
+
+        .service-card:hover .card-image-box img {
+            transform: scale(1.05);
         }
 
         .card-content {
-            padding: 25px;
+            padding: 30px;
         }
 
         .card-content h3 {
             font-family: var(--font-title);
             font-size: 20px;
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .card-content p {
             font-size: 14px;
             color: var(--text-muted);
-            margin-bottom: 20px;
-            height: 60px;
+            margin-bottom: 25px;
+            height: 66px;
         }
 
         .btn-card {
             display: block;
             text-align: center;
             text-decoration: none;
-            background: rgba(108, 99, 255, 0.1);
+            background: rgba(74, 58, 255, 0.08);
             color: var(--brand-purple);
-            padding: 12px;
-            border-radius: 12px;
+            padding: 13px;
+            border-radius: 14px;
             font-weight: 600;
-            transition: 0.3s;
+            font-size: 14px;
+            transition: 0.3s ease;
         }
 
         .service-card:hover .btn-card {
-            background: var(--gradient-lilac);
+            background: var(--gradient-primary);
             color: white;
+            box-shadow: 0 4px 15px rgba(74, 58, 255, 0.2);
         }
 
         /* QUEM SOMOS */
         .about-section {
-            padding: 90px 0;
+            padding: 80px 0;
         }
 
         .about-grid {
@@ -255,23 +299,24 @@
         }
 
         .about-content {
-            background: var(--white-glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: var(--glass-card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 45px;
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
         }
 
         .about-content h2 {
             font-family: var(--font-title);
             font-size: 36px;
             margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .about-content p {
             color: var(--text-muted);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .metrics-grid {
@@ -281,28 +326,36 @@
         }
 
         .metric-box {
-            background: var(--white-glass-intense);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 16px;
+            padding: 25px;
+            border-radius: 20px;
             border-left: 4px solid var(--brand-gold);
-            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            border-top: 1px solid var(--glass-border);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.01);
         }
 
         .metric-box h4 {
             font-family: var(--font-title);
-            font-size: 28px;
+            font-size: 30px;
             color: var(--brand-purple);
+            margin-bottom: 5px;
         }
 
-        /* RODAPÉ */
+        .metric-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* FOOTER PRO */
         .footer {
-            background-color: rgba(227, 218, 247, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 50px 0 30px 0;
-            margin-top: 60px;
-            border-top: 1px solid rgba(108, 99, 255, 0.2);
+            background-color: rgba(222, 211, 245, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 60px 0 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(74, 58, 255, 0.2);
         }
 
         .footer-content {
@@ -310,19 +363,28 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+            gap: 25px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(74, 58, 255, 0.1);
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: white;
             text-decoration: none;
-            padding: 14px 28px;
+            padding: 15px 32px;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.35);
         }
 
         .footer-bottom {
@@ -336,6 +398,13 @@
         @media (max-width: 992px) {
             .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-buttons { justify-content: center; }
+            .hero-image-wrapper { height: 350px; order: -1; }
+        }
+
+        @media (max-width: 768px) {
+            .menu { display: none; }
+            .hero-content h1 { font-size: 34px; }
+            .footer-content, .footer-bottom { flex-direction: column; text-align: center; gap: 20px; }
         }
     </style>
 </head>
@@ -365,8 +434,8 @@
                     <a href="https://wa.me/seu-numero" class="btn-secondary">Falar no WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?auto=format&fit=crop&q=80&w=600" alt="Crescimento de Patrimônio Estratégico">
+            <div class="hero-image-wrapper">
+                <img src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg" alt="LR Assessoria Patrimonial Inteligente">
             </div>
         </div>
     </section>
@@ -374,48 +443,49 @@
     <section id="solucoes" class="services-section">
         <div class="container">
             <h2 class="section-title">Nossos <span class="highlight">Segmentos de Consórcio</span></h2>
+            <p class="section-subtitle">Escolha o plano perfeito para alavancar suas conquistas.</p>
             
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=400" alt="Veículos e Automóveis">
+                    <div class="card-image-box">
+                        <img src="https://cdn.pixabay.com/photo/2016/12/03/18/57/car-1880381_1280.jpg" alt="Consórcio de Veículos Premium">
                     </div>
                     <div class="card-content">
                         <h3>🚗 Veículos</h3>
-                        <p>Planos sob medida para conquistar seu carro novo ou renovar sua frota com parcelas acessíveis.</p>
+                        <p>Planos sob medida para conquistar seu carro novo ou renovar sua frota com as melhores taxas.</p>
                         <a href="https://wa.me/seu-numero" class="btn-card">Simular Veículo</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=400" alt="Imóveis e Casas">
+                    <div class="card-image-box">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070_1280.jpg" alt="Consórcio Imobiliário e Mansões">
                     </div>
                     <div class="card-content">
                         <h3>🏠 Imobiliário</h3>
-                        <p>Programe a compra de sua casa própria, terrenos comerciais ou construções sem juros abusivos.</p>
+                        <p>Programe a compra de sua casa própria, terrenos comerciais ou construções de alto padrão sem juros.</p>
                         <a href="https://wa.me/seu-numero" class="btn-card">Simular Imóvel</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&q=80&w=400" alt="Caminhões e Tratores">
+                    <div class="card-image-box">
+                        <img src="https://cdn.pixabay.com/photo/2015/09/05/23/28/truck-925941_1280.jpg" alt="Consórcio de Pesados e Agrícola">
                     </div>
                     <div class="card-content">
                         <h3>🚜 Pesados e Agrícola</h3>
-                        <p>Créditos estruturados para caminhões, maquinário agrícola, reformas e projetos de apicultura.</p>
+                        <p>Créditos estruturados para caminhões, maquinários robustos, reformas e apicultura comercial.</p>
                         <a href="https://wa.me/seu-numero" class="btn-card">Simular Pesados</a>
                     </div>
                 </div>
 
                 <div class="service-card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1611974717482-4828c2424b9a?auto=format&fit=crop&q=80&w=400" alt="Gráficos Financeiros">
+                    <div class="card-image-box">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/22/21/57/data-1850785_1280.jpg" alt="Gráficos Financeiros e Investimentos">
                     </div>
                     <div class="card-content">
                         <h3>📈 Planejamento Patrimonial</h3>
-                        <p>Alavanque seu capital e construa um patrimônio sólido utilizando consórcio estratégico.</p>
+                        <p>Alavanque seu capital estratégico e multiplique seu patrimônio com segurança fintech.</p>
                         <a href="https://wa.me/seu-numero" class="btn-card">Simular Investimentos</a>
                     </div>
                 </div>
@@ -436,7 +506,7 @@
                 </div>
                 <div class="metric-box">
                     <h4>+1.200</h4>
-                    <p>Clientes atendidos com excelência.</p>
+                    <p>Clientes atendidos com excelência nacional.</p>
                 </div>
                 <div class="metric-box">
                     <h4>R$ 45M+</h4>
@@ -444,7 +514,7 @@
                 </div>
                 <div class="metric-box">
                     <h4>100%</h4>
-                    <p>Transparência em todo processo.</p>
+                    <p>Transparência em todo processo consultivo.</p>
                 </div>
             </div>
         </div>
@@ -455,7 +525,7 @@
             <div class="footer-content">
                 <div>
                     <h3>LR Consórcios & Assessoria Financeira</h3>
-                    <p>Soluções modernas e credibilidade fintech para o seu patrimônio.</p>
+                    <p>Soluções modernas e credibilidade máxima para o seu patrimônio.</p>
                 </div>
                 <div>
                     <a href="https://wa.me/seu-numero" target="_blank" class="btn-whatsapp">
