@@ -159,7 +159,7 @@
             transition: 0.3s;
         }
 
-        /* INDICADORES DO CARROSSEL (TRAÇOS EMBAIXO) */
+        /* INDICADORES DO CARROSSEL */
         .slider-dots {
             position: absolute;
             bottom: 25px;
@@ -448,7 +448,7 @@
         </div>
 
         <div class="slide-item">
-            <img src="https://images.unsplash.com/photo-1578155296316-aa069f56f18c?auto=format&fit=crop&w=1400&q=80" class="slide-bg" alt="Maquinário Pesado">
+            <img src="A2S.jpg" class="slide-bg" alt="Maquinário Pesado">
             <div class="slide-content">
                 <h1>Estruturação para <span class="gradient-text">Frotas e Pesados</span></h1>
                 <p>Aumente sua capacidade logística ou operacional com maquinários pesados e agrícolas de forma programada.</p>
@@ -580,12 +580,12 @@
                     <div class="card-body"><h3>🏡 Imóveis</h3><p>Para construções urbanas ou áreas comerciais.</p></div>
                 </div>
                 <div class="service-card">
-                    <div class="card-img"><img src="https://images.unsplash.com/photo-1578155296316-aa069f56f18c?auto=format&fit=crop&w=600&q=80"></div>
-                    <div class="card-body"><h3>🚛 Caminhões & Pesados</h3><p>Linhas destinadas a veículos pesados estruturais.</p></div>
+                    <div class="card-img"><img src="caminhao-truck.jpg" alt="Caminhão Truck"></div>
+                    <div class="card-body"><h3>🚛 Caminhões</h3><p>Linhas destinadas a veículos pesados estruturais.</p></div>
                 </div>
                 <div class="service-card">
-                    <div class="card-img"><img src="https://images.unsplash.com/photo-1530260626688-048279320445?auto=format&fit=crop&w=600&q=80"></div>
-                    <div class="card-body"><h3>🚜 Máquinas Agrícolas</h3><p>Investimento no campo sem travar fluxo de safra.</p></div>
+                    <div class="card-img"><img src="A2S.jpg" alt="Trator Agrícola"></div>
+                    <div class="card-body"><h3>🚜 Pesados & Agrícolas</h3><p>Investimento no campo sem travar fluxo de safra.</p></div>
                 </div>
             </div>
         </div>
@@ -617,11 +617,11 @@
     </footer>
 
     <script>
-        // LÓGICA DO CARROSSEL AUTOMÁTICO (SLIDER)
+        // CARROSSEL AUTOMÁTICO
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide-item');
         const dots = document.querySelectorAll('.dot');
-        let intervaloCarrossel = setInterval(proximoSlide, 5000); // Passa sozinho a cada 5 segundos
+        let intervaloCarrossel = setInterval(proximoSlide, 5000);
 
         function mostrarSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
@@ -639,11 +639,11 @@
         function mudarSlideManual(index) {
             slideIndex = index;
             mostrarSlide(slideIndex);
-            clearInterval(intervaloCarrossel); // Reseta o tempo quando o usuário clica
+            clearInterval(intervaloCarrossel);
             intervaloCarrossel = setInterval(proximoSlide, 5000);
         }
 
-        // LÓGICA DO SIMULADOR FINANCEIRO
+        // SIMULADOR
         const Prazos = [36, 48, 60, 72, 80, 100, 120, 144, 180, 240];
         const taxasPorCategoria = { "Veículo": 0.20, "Imóvel": 0.25, "Caminhão": 0.22, "Máquina Agrícola": 0.23 };
 
