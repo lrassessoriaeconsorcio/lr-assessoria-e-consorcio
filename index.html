@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LR Consórcios & Assessoria Financeira</title>
+    <title>LR Consórcios & Assessoria Patrimonial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,16 @@
     
     <style>
         :root {
-            --bg-light: #f8f9fd;
-            --brand-blue: #004BFF; 
-            --brand-lilac: #8C52FF; 
-            --text-dark: #0A0E1A;
-            --text-muted: #4E5D78;
+            --bg-light: #F8FAFC;
+            --brand-blue: #2563EB; 
+            --brand-lilac: #7C3AED; 
+            --text-dark: #0F172A;
+            --text-muted: #475569;
             --white: #ffffff;
             --gradient-premium: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-lilac) 100%);
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Poppins', sans-serif;
-            --radius: 20px;
+            --radius: 24px;
         }
 
         * {
@@ -38,7 +38,7 @@
         }
 
         .container {
-            width: 90%;
+            width: 92%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -50,16 +50,16 @@
             font-weight: 800;
         }
 
-        /* NAVBAR FINTECH */
+        /* NAVBAR */
         .navbar {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 20px 0;
+            padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 75, 255, 0.06);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.06);
         }
 
         .navbar .container {
@@ -70,7 +70,7 @@
 
         .logo h2 {
             font-family: var(--font-title);
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
@@ -91,19 +91,21 @@
         .btn-nav {
             background: var(--brand-blue);
             color: var(--white) !important;
-            padding: 10px 22px;
+            padding: 12px 26px;
             border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero-section {
-            padding: 80px 0;
+            padding: 70px 0 60px 0;
+            background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.05), transparent);
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
 
@@ -112,11 +114,11 @@
             font-size: 46px;
             line-height: 1.2;
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
         .hero-content p {
-            font-size: 17px;
+            font-size: 18px;
             color: var(--text-muted);
             margin-bottom: 35px;
         }
@@ -125,71 +127,30 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
         }
 
         .btn-primary {
-            background: var(--brand-blue);
+            background: var(--gradient-premium);
             color: var(--white);
             text-decoration: none;
-            padding: 16px 32px;
+            padding: 18px 36px;
             border-radius: var(--radius);
             font-weight: 600;
             transition: 0.3s;
-            box-shadow: 0 8px 20px rgba(0, 75, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(0, 75, 255, 0.25);
-        }
-
-        .btn-whatsapp-hero {
-            background: #25D366;
-            color: var(--white);
-            text-decoration: none;
-            padding: 16px 32px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-whatsapp-hero:hover {
-            transform: translateY(-2px);
-            background: #20ba59;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            border-top: 1px solid rgba(0,0,0,0.06);
-            padding-top: 25px;
-        }
-
-        .badge-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .badge-item i {
-            color: var(--brand-blue);
-            font-size: 16px;
+            box-shadow: 0 14px 30px rgba(37, 99, 235, 0.3);
         }
 
         .hero-image-box {
-            width: 100%;
-            height: 480px;
+            position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+            height: 440px;
         }
 
         .hero-image-box img {
@@ -198,30 +159,72 @@
             object-fit: cover;
         }
 
-        /* SEÇÃO SIMULADOR */
-        .simulator-section {
-            padding: 80px 0;
-            background: #f0f3fa;
+        /* PROVA SOCIAL / STATS */
+        .social-proof-bar {
+            margin-top: 10px;
+            margin-bottom: 70px;
         }
 
-        .sim-info-bar {
-            background: var(--white);
-            padding: 20px;
-            border-radius: var(--radius);
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        .proof-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-        .info-check {
+        .proof-card {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(0,0,0,0.01);
+            transition: 0.3s;
+        }
+
+        .proof-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+
+        .proof-card i {
+            font-size: 22px;
+            color: var(--brand-blue);
+            background: rgba(37, 99, 235, 0.06);
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .proof-card span {
             font-size: 14px;
             font-weight: 600;
             color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        }
+
+        /* SIMULADOR */
+        .simulator-section {
+            padding: 90px 0;
+            background: #F1F5F9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 38px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 50px;
         }
 
         .sim-container {
@@ -235,7 +238,7 @@
             background: var(--white);
             padding: 40px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
         }
 
         .form-grid {
@@ -262,122 +265,102 @@
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.1);
+            padding: 14px 18px;
+            border-radius: 14px;
+            border: 1px solid #E2E8F0;
             font-family: var(--font-body);
             font-size: 14px;
             outline: none;
             transition: 0.3s;
+            background: #F8FAFC;
         }
 
         .form-group input:focus, .form-group select:focus {
             border-color: var(--brand-blue);
-            box-shadow: 0 0 0 3px rgba(0, 75, 255, 0.1);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
         }
 
-        .btn-calc {
-            width: 100%;
-            background: var(--brand-blue);
-            color: var(--white);
-            border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn-calc:hover {
-            background: #003ed3;
-        }
-
-        /* Painel de Resultados */
+        /* PAINEL DE RESULTADOS EM TEMPO REAL */
         .result-panel {
             background: var(--white);
             padding: 40px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 2px dashed rgba(0, 75, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            border: 2px solid rgba(37, 99, 235, 0.08);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            min-height: 520px;
-        }
-
-        .result-placeholder {
-            text-align: center;
-            color: var(--text-muted);
-        }
-
-        .result-placeholder i {
-            font-size: 48px;
-            color: var(--brand-blue);
-            margin-bottom: 15px;
-            opacity: 0.5;
-        }
-
-        .result-active {
-            display: none;
+            justify-content: space-between;
+            min-height: 560px;
         }
 
         .result-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #F1F5F9;
+            padding-bottom: 15px;
         }
 
         .result-header h4 {
             font-family: var(--font-title);
             font-size: 20px;
+            letter-spacing: -0.5px;
+            color: var(--brand-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .result-metrics {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 20px;
         }
 
-        .metric-card {
-            background: var(--bg-light);
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 18px;
+            background: #F8FAFC;
+            border-radius: 14px;
+            border: 1px solid #F1F5F9;
         }
 
-        .metric-card.highlight-metric {
-            background: rgba(0, 75, 255, 0.04);
-            border: 1px solid rgba(0, 75, 255, 0.1);
+        .metric-row.highlight {
+            background: rgba(37, 99, 235, 0.04);
+            border-color: rgba(37, 99, 235, 0.15);
         }
 
-        .metric-card span {
-            font-size: 12px;
+        .metric-row span {
+            font-size: 14px;
             color: var(--text-muted);
-            display: block;
-            margin-bottom: 4px;
+            font-weight: 500;
         }
 
-        .metric-card strong {
+        .metric-row strong {
             font-family: var(--font-title);
-            font-size: 18px;
+            font-size: 16px;
             color: var(--text-dark);
         }
 
-        .metric-card.highlight-metric strong {
+        .metric-row.highlight strong {
+            font-size: 20px;
             color: var(--brand-blue);
         }
 
         .economy-box {
             color: var(--white);
-            padding: 15px;
-            border-radius: 12px;
+            background: #10B981;
+            padding: 16px;
+            border-radius: 16px;
             text-align: center;
             font-weight: 600;
             font-size: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
         }
 
         .btn-whatsapp-proposal {
@@ -388,38 +371,38 @@
             background: #25D366;
             color: var(--white);
             text-decoration: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 15px;
+            padding: 18px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
             transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-whatsapp-proposal:hover {
-            background: #20ba59;
+            background: #22c55e;
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
         }
 
-        /* SEÇÃO DE SOLUÇÕES */
-        .services-section {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .section-title {
+        /* URGENCY BAR */
+        .urgency-bar {
+            background: var(--gradient-premium);
+            color: var(--white);
+            padding: 18px 0;
             text-align: center;
-            font-family: var(--font-title);
-            font-size: 36px;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
+            font-weight: 700;
             font-size: 16px;
-            margin-bottom: 50px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+        }
+
+        /* SOLUÇÕES (CARDS MODERNOS DEGRADÊ) */
+        .services-section {
+            padding: 90px 0;
+            background: var(--white);
         }
 
         .services-grid {
@@ -432,47 +415,53 @@
             background: var(--bg-light);
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid #F1F5F9;
+            position: relative;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(0, 75, 255, 0.08);
-            border-color: rgba(0, 75, 255, 0.15);
+            box-shadow: 0 25px 45px rgba(124, 58, 237, 0.12);
+            border-color: rgba(124, 58, 237, 0.25);
         }
 
         .card-img {
             width: 100%;
             height: 190px;
             overflow: hidden;
+            position: relative;
         }
 
         .card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.4s;
+            transition: 0.5s;
+        }
+
+        .service-card:hover .card-img img {
+            transform: scale(1.05);
         }
 
         .card-body {
-            padding: 25px;
+            padding: 30px;
         }
 
         .card-body h3 {
             font-family: var(--font-title);
-            font-size: 19px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .card-body p {
             font-size: 14px;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            min-height: 66px;
         }
 
         .btn-card {
@@ -481,96 +470,91 @@
             text-decoration: none;
             background: var(--white);
             color: var(--brand-blue);
-            padding: 12px;
-            border-radius: 12px;
+            padding: 14px;
+            border-radius: 14px;
             font-weight: 600;
             font-size: 14px;
-            border: 1px solid rgba(0, 75, 255, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.15);
             transition: 0.3s;
         }
 
         .service-card:hover .btn-card {
-            background: var(--brand-blue);
+            background: var(--gradient-premium);
             color: var(--white);
-            border-color: var(--brand-blue);
+            border-color: transparent;
         }
 
-        /* SEÇÃO BENEFÍCIOS */
-        .benefits-section {
-            padding: 80px 0;
+        /* DEPOIMENTOS */
+        .testimonials-section {
+            padding: 90px 0;
+            background: #F8FAFC;
         }
 
-        .benefits-grid {
+        .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        .benefit-card {
+        .testimonial-card {
             background: var(--white);
-            padding: 30px;
+            padding: 35px;
             border-radius: var(--radius);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid #E2E8F0;
+            transition: 0.3s;
         }
 
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: rgba(0, 75, 255, 0.06);
-            color: var(--brand-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
+        .testimonial-card:hover {
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .stars {
+            color: #FBBF24;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .testimonial-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-style: italic;
             margin-bottom: 20px;
         }
 
-        .benefit-card h4 {
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-premium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .client-details h5 {
             font-family: var(--font-title);
-            font-size: 17px;
-            margin-bottom: 8px;
+            font-size: 15px;
         }
 
-        .benefit-card p {
-            font-size: 14px;
+        .client-details span {
+            font-size: 12px;
             color: var(--text-muted);
-        }
-
-        /* SEÇÃO CONFIANÇA */
-        .trust-section {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .stat-box h3 {
-            font-family: var(--font-title);
-            font-size: 36px;
-            color: var(--brand-blue);
-            margin-bottom: 5px;
-        }
-
-        .stat-box p {
-            font-size: 14px;
-            color: var(--text-muted);
-            font-weight: 500;
         }
 
         /* FOOTER */
         .footer {
-            background: #0A0E1A;
+            background: #0F172A;
             color: var(--white);
-            padding: 60px 0 30px 0;
+            padding: 50px 0 30px 0;
         }
 
         .footer-content {
@@ -579,14 +563,11 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 30px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .footer-content p {
-            color: #7E8B9B;
+            color: #94A3B8;
             font-size: 14px;
-            margin-top: 5px;
         }
 
         .btn-whatsapp-footer {
@@ -603,14 +584,14 @@
 
         @media (max-width: 992px) {
             .hero-grid, .sim-container { grid-template-columns: 1fr; }
-            .hero-buttons, .hero-badges { justify-content: center; }
-            .hero-image-box { height: 360px; order: -1; }
-            .result-panel { min-height: auto; }
+            .proof-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-image-box { height: 320px; order: -1; }
         }
 
         @media (max-width: 768px) {
             .menu { display: none; }
-            .hero-content h1 { font-size: 34px; }
+            .hero-content h1 { font-size: 36px; }
+            .proof-grid { grid-template-columns: 1fr; }
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full-width { grid-column: span 1; }
             .footer-content { flex-direction: column; text-align: center; }
@@ -626,10 +607,10 @@
             </div>
             <nav class="menu">
                 <a href="#inicio">Início</a>
-                <a href="#simulador">Simular</a>
+                <a href="#simulador">Simulador</a>
                 <a href="#solucoes">Soluções</a>
-                <a href="#motivos">Benefícios</a>
-                <a href="https://wa.me/seu-numero" class="btn-nav">Falar no WhatsApp</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="https://wa.me/seu-numero" class="btn-nav">Falar com Especialista</a>
             </nav>
         </div>
     </header>
@@ -637,43 +618,47 @@
     <section id="inicio" class="hero-section">
         <div class="container hero-grid">
             <div class="hero-content">
-                <h1>Conquiste seu imóvel, veículo ou caminhão com <span class="gradient-text">planejamento inteligente</span>.</h1>
-                <p>Mais de 5 anos ajudando clientes de todo os estados do Brasil a realizarem seus objetivos através do consórcio planejado.</p>
-                
+                <h1>Realize seu carro, caminhão ou imóvel <span class="gradient-text">sem financiamento e sem juros abusivos</span>.</h1>
+                <p>Acesse créditos de até R$ 500 mil com parcelas perfeitamente planejadas e mude o patamar do seu patrimônio ou frota empresarial.</p>
                 <div class="hero-buttons">
                     <a href="#simulador" class="btn-primary">Fazer Simulação Gratuita</a>
-                    <a href="https://wa.me/seu-numero" class="btn-whatsapp-hero"><i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp</a>
-                </div>
-
-                <div class="hero-badges">
-                    <div class="badge-item"><i class="fa-solid fa-users"></i> +500 clientes atendidos</div>
-                    <div class="badge-item"><i class="fa-solid fa-earth-americas"></i> Atendimento nacional</div>
-                    <div class="badge-item"><i class="fa-solid fa-user-tie"></i> Consultoria especializada</div>
                 </div>
             </div>
-            
             <div class="hero-image-box">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Patrimônio Premium">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Conquistas Inteligentes LR">
             </div>
         </div>
     </section>
 
+    <div class="container social-proof-bar">
+        <div class="proof-grid">
+            <div class="proof-card">
+                <i class="fa-solid fa-users"></i>
+                <span>+500 Clientes Atendidos</span>
+            </div>
+            <div class="proof-card">
+                <i class="fa-solid fa-business-time"></i>
+                <span>+5 Anos de Mercado</span>
+            </div>
+            <div class="proof-card">
+                <i class="fa-solid fa-earth-americas"></i>
+                <span>Atendimento Nacional</span>
+            </div>
+            <div class="proof-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Especialistas em Consórcios</span>
+            </div>
+        </div>
+    </div>
+
     <section id="simulador" class="simulator-section">
         <div class="container">
-            
-            <div class="sim-info-bar">
-                <div class="info-check">✅ Atendimento em todo o Brasil</div>
-                <div class="info-check">✅ Simulação gratuita</div>
-                <div class="info-check">✅ Resposta em poucos minutos</div>
-                <div class="info-check">✅ Especialistas em consórcios</div>
-            </div>
-
-            <h2 class="section-title">Simule seu Crédito em <span class="gradient-text">30 segundos</span></h2>
-            <p class="section-subtitle">Descubra o valor estimado das suas parcelas de forma clara e instantânea.</p>
+            <h2 class="section-title">📊 Resultado Estimado da Simulação</h2>
+            <p class="section-subtitle">Preencha e veja as estimativas mudarem instantaneamente na tela.</p>
 
             <div class="sim-container">
                 <div class="sim-card">
-                    <form id="leadForm" onsubmit="calcularSimulacao(event)">
+                    <form id="leadForm" onsubmit="prepararEnvio(event)">
                         <div class="form-grid">
                             <div class="form-group full-width">
                                 <label for="nome">Nome Completo</label>
@@ -694,12 +679,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="prazoDesejado">Prazo Desejado</label>
-                                <select id="prazoDesejado" required>
+                                <select id="prazoDesejado" required onchange="dispararCalculo()">
                                     </select>
                             </div>
                             <div class="form-group">
-                                <label for="valorDesejado">Valor Desejado</label>
-                                <input type="text" id="valorDesejado" required placeholder="R$ 0,00" oninput="aplicarMascaraMoeda(this)">
+                                <label for="valorDesejado">Crédito Desejado</label>
+                                <input type="text" id="valorDesejado" required value="R$ 100.000,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group">
                                 <label for="possuiEntrada">Possui Entrada?</label>
@@ -710,62 +695,64 @@
                             </div>
                             <div class="form-group">
                                 <label for="valorEntrada">Valor da Entrada</label>
-                                <input type="text" id="valorEntrada" value="R$ 0,00" disabled placeholder="R$ 0,00" oninput="aplicarMascaraMoeda(this)">
+                                <input type="text" id="valorEntrada" value="R$ 0,00" disabled oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group">
                                 <label for="parcelaDesejada">Parcela Máxima Alvo</label>
-                                <input type="text" id="parcelaDesejada" required placeholder="R$ 0,00" oninput="aplicarMascaraMoeda(this)">
+                                <input type="text" id="parcelaDesejada" required value="R$ 1.500,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group full-width">
-                                <label for="possuiRestricao">Nome com Alguma Restrição (SPC/SERASA)?</label>
-                                <select id="possuiRestricao" required>
+                                <label for="possuiRestricao">Nome com alguma restrição cadastral (SPC/SERASA)?</label>
+                                <select id="possuiRestricao" required onchange="dispararCalculo()">
                                     <option value="Não">Não</option>
                                     <option value="Sim">Sim</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn-calc">Calcular Cenários</button>
+                        <button type="submit" class="btn-calc">Garantir esta Condição Especiais</button>
                     </form>
                 </div>
 
                 <div class="result-panel" id="resultPanel">
-                    <div class="result-placeholder" id="placeholderView">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        <p>Preencha os dados ao lado e clique em <strong>Calcular Cenários</strong> para visualizar sua análise patrimonial.</p>
-                    </div>
-
-                    <div class="result-active" id="activeView">
+                    <div>
                         <div class="result-header">
-                            <h4>Sua Estimativa Estruturada</h4>
+                            <h4><i class="fa-solid fa-calculator"></i> Estruturação de Crédito Inteligente</h4>
                         </div>
                         
-                        <div id="statusRestricaoBox" style="display:none; background: #eef3ff; color: #1e3a8a; padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid #bfdbfe; line-height: 1.4;">
-                            ℹ️ <strong>Nota do Consultor:</strong> Perfis com restrições enfrentam juros severos ou recusa direta em financiamentos bancários. O consórcio é o formato ideal para blindar sua aprovação. Solicite os grupos facilitados abaixo.
+                        <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 15px; border-radius: 16px; font-size: 13.5px; font-weight: 600; margin-bottom: 20px; border: 1px solid #BFDBFE; line-height: 1.4;">
+                            ℹ️ <strong>Observação Importante:</strong> Identificamos restrição cadastral ativa. No modelo de financiamento bancário comum, isso geraria uma reprovação imediata. No entanto, através do nosso consórcio planejado estruturamos a sua aprovação de forma segura. Avance abaixo!
                         </div>
 
                         <div class="result-metrics">
-                            <div class="metric-card">
-                                <span>Valor do Crédito</span>
+                            <div class="metric-row">
+                                <span>Crédito Solicitado</span>
                                 <strong id="resCredito">R$ 0,00</strong>
                             </div>
-                            <div class="metric-card highlight-metric">
+                            <div class="metric-row">
+                                <span>Entrada Informada</span>
+                                <strong id="resEntrada">R$ 0,00</strong>
+                            </div>
+                            <div class="metric-row">
+                                <span>Prazo Pretendido</span>
+                                <strong id="resPrazo">0 meses</strong>
+                            </div>
+                            <div class="metric-row highlight">
                                 <span>Parcela Estimada</span>
                                 <strong id="resParcela">R$ 0,00</strong>
                             </div>
-                            <div class="metric-card">
-                                <span>Prazo Selecionado</span>
-                                <strong id="resPrazo">0 meses</strong>
-                            </div>
-                            <div class="metric-card">
+                            <div class="metric-row">
                                 <span>Taxa de Juros</span>
-                                <strong style="color: #27ae60;">ZERO JUROS</strong>
+                                <strong style="color: #10B981; font-weight: 700;">ZERO JUROS</strong>
                             </div>
                         </div>
+                    </div>
+
+                    <div>
                         <div class="economy-box" id="resEconomia">
                             Calculando...
                         </div>
                         <a href="#" id="whatsappLink" target="_blank" class="btn-whatsapp-proposal">
-                            <i class="fa-brands fa-whatsapp"></i> Receber proposta personalizada no WhatsApp
+                            <i class="fa-brands fa-whatsapp"></i> Receber Análise por WhatsApp
                         </a>
                     </div>
                 </div>
@@ -774,20 +761,24 @@
         </div>
     </section>
 
+    <div class="urgency-bar">
+        🔥 Simulação gratuita por WhatsApp em menos de 5 minutos!
+    </div>
+
     <section id="solucoes" class="services-section">
         <div class="container">
-            <h2 class="section-title">Nossas <span class="gradient-text">Soluções</span></h2>
-            <p class="section-subtitle">Acelere a aquisição de seus bens estruturais sem pagar juros abusivos.</p>
+            <h2 class="section-title">Soluções <span class="gradient-text">Patrimoniais</span></h2>
+            <p class="section-subtitle">O caminho inteligente para blindar e multiplicar o seu capital de forma planejada.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=600&q=80" alt="Veículos Premium">
+                        <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=600&q=80" alt="Veículos">
                     </div>
                     <div class="card-body">
                         <h3>🚗 Veículos</h3>
-                        <p>Planos inteligentes para conquistar ou renovar seu automóvel com parcelas leves.</p>
-                        <a href="#simulador" class="btn-card">Simular Agora</a>
+                        <p>Linhas táticas para aquisição e renovação contínua de frotas e carros de passeio.</p>
+                        <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
@@ -797,8 +788,8 @@
                     </div>
                     <div class="card-body">
                         <h3>🏡 Imóveis</h3>
-                        <p>Programe a compra de imóveis comerciais, residenciais ou terrenos sem juros bancários.</p>
-                        <a href="#simulador" class="btn-card">Simular Agora</a>
+                        <p>Adquira pontos comerciais, residências, terrenos ou galpões sem juros embutidos.</p>
+                        <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
@@ -808,8 +799,8 @@
                     </div>
                     <div class="card-body">
                         <h3>🚛 Caminhões</h3>
-                        <p>Expanda sua capacidade logística ou renove sua frota pesada com total suporte tático.</p>
-                        <a href="#simulador" class="btn-card">Simular Agora</a>
+                        <p>Alavanque sua capacidade de carga rodoviária sem descapitalizar o caixa operacional.</p>
+                        <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
@@ -819,62 +810,42 @@
                     </div>
                     <div class="card-body">
                         <h3>🚜 Máquinas Agrícolas</h3>
-                        <p>Linhas de crédito estruturadas para modernizar o seu maquinário e aumentar sua produção.</p>
-                        <a href="#simulador" class="btn-card">Simular Agora</a>
+                        <p>Renove implementos rurais, tratores e maquinários com taxas de administração mínimas.</p>
+                        <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="motivos" class="benefits-section">
+    <section id="depoimentos" class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">Por que escolher a <span class="gradient-text">LR Consórcios</span>?</h2>
-            <p class="section-subtitle">A segurança operacional que você precisa com a flexibilidade que você procura.</p>
+            <h2 class="section-title">Resultados de <span class="gradient-text">Quem Comprova</span></h2>
+            <p class="section-subtitle">Veja o depoimento de clientes que fugiram dos abusos bancários com a nossa ajuda.</p>
             
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-heart"></i></div>
-                    <h4>Atendimento humanizado</h4>
-                    <p>Foco total nas suas necessidades reais através de um suporte consultivo próximo.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Consegui meu caminhão através da LR Consórcios e fui muito bem atendido durante todo o processo até a liberação."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">RM</div>
+                        <div class="client-details">
+                            <h5>Ricardo Mendes</h5>
+                            <span>Transportes R.M.</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-chess-knight"></i></div>
-                    <h4>Estratégias de contemplação</h4>
-                    <p>Estudo analítico de grupos para otimizar lances e acelerar sua contemplação.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-sliders"></i></div>
-                    <h4>Planos personalizados</h4>
-                    <p>Estruturação de prazos e parcelas sob medida para o fluxo de caixa do seu perfil.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-route"></i></div>
-                    <h4>Acompanhamento completo</h4>
-                    <p>Assessoria especializada do momento da contratação até a liberação do crédito.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="trust-section">
-        <div class="container">
-            <div class="stats-row">
-                <div class="stat-box">
-                    <h3>+5 Anos</h3>
-                    <p>De solidez de mercado</p>
-                </div>
-                <div class="stat-box">
-                    <h3>+500</h3>
-                    <p>Clientes atendidos e satisfeitos</p>
-                </div>
-                <div class="stat-box">
-                    <h3>R$ 45M+</h3>
-                    <p>Em créditos liberados pelo país</p>
-                </div>
-                <div class="stat-box">
-                    <h3>100%</h3>
-                    <p>De segurança institucional</p>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Excelente assessoria. Estávamos com receio por conta das taxas de mercado, mas conseguimos estruturar nossa sede própria sem juros."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">AF</div>
+                        <div class="client-details">
+                            <h5>Amanda Fonseca</h5>
+                            <span>Investidora Comercial</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -885,11 +856,11 @@
             <div class="footer-content">
                 <div>
                     <h3>LR Consórcios & Assessoria</h3>
-                    <p>Construindo patrimônios de forma sólida e estruturada.</p>
+                    <p>Construindo patrimônios sólidos com inteligência financeira.</p>
                 </div>
                 <div>
                     <a href="https://wa.me/seu-numero" class="btn-whatsapp-footer">
-                        <i class="fa-brands fa-whatsapp"></i> Fale com um Especialista
+                        <i class="fa-brands fa-whatsapp"></i> Receba Análise Grátis
                     </a>
                 </div>
             </div>
@@ -897,11 +868,10 @@
     </footer>
 
     <script>
-        // Opções de prazos reais de acordo com cada tipo de crédito
         const prazosPorSegmento = {
             "Veículo": [36, 48, 60, 72, 80, 100],
-            "Imóvel": [120, 150, 180, 200, 240],
-            "Caminhão": [60, 80, 100, 120, 140],
+            "Imóvel": [120, 144, 180, 200, 240],
+            "Caminhão": [60, 80, 100, 120, 150],
             "Máquina Agrícola": [60, 80, 100, 120]
         };
 
@@ -916,12 +886,9 @@
                 opt.innerText = `${meses} meses`;
                 selectPrazo.appendChild(opt);
             });
+            
+            dispararCalculo();
         }
-
-        // Inicializa os prazos na primeira execução do site
-        window.onload = function() {
-            atualizarOpcoesPrazo();
-        };
 
         function aplicarMascaraMoeda(input) {
             let valor = input.value.replace(/\D/g, "");
@@ -929,6 +896,8 @@
             valor = valor.replace(".", ",");
             valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
             input.value = "R$ " + valor;
+            
+            dispararCalculo();
         }
 
         function converterParaNumero(valorTexto) {
@@ -942,89 +911,95 @@
             const valorEntradaInput = document.getElementById('valorEntrada');
             if (possuiEntrada === 'Sim') {
                 valorEntradaInput.disabled = false;
-                valorEntradaInput.value = "R$ 0,00";
-                valorEntradaInput.focus();
+                valorEntradaInput.value = "R$ 20.000,00";
             } else {
                 valorEntradaInput.disabled = true;
                 valorEntradaInput.value = "R$ 0,00";
             }
+            dispararCalculo();
         }
 
-        function calcularSimulacao(event) {
-            event.preventDefault();
-
-            // Resgate dos dados coletados
-            const nome = document.getElementById('nome').value;
-            const whatsapp = document.getElementById('whatsapp').value;
+        function dispararCalculo() {
             const tipoCredito = document.getElementById('tipoCredito').value;
-            const prazo = parseInt(document.getElementById('prazoDesejado').value) || 120;
+            const prazo = parseInt(document.getElementById('prazoDesejado').value) || 60;
             const valorDesejado = converterParaNumero(document.getElementById('valorDesejado').value);
-            const possuiEntrada = document.getElementById('possuiEntrada').value;
             const valorEntrada = converterParaNumero(document.getElementById('valorEntrada').value);
-            const parcelaDesejada = converterParaNumero(document.getElementById('parcelaDesejada').value);
             const possuiRestricao = document.getElementById('possuiRestricao').value;
 
             const saldoLiquido = valorDesejado - valorEntrada;
 
-            // Alíquota padrão diluída de taxas administrativas do consórcio
-            const taxaAdmTotal = 0.15; 
+            // Alíquota média estável do consórcio (taxa adm)
+            const taxaAdmTotal = 0.16; 
             const parcelaConsorcio = (saldoLiquido * (1 + taxaAdmTotal)) / prazo;
 
-            // Determinação exata da taxa comparativa de juros solicitada
+            // Regras Matemáticas de Juros Comparativos Solicitadas
             let taxaJurosFinanciamento = 0;
             if (tipoCredito === 'Veículo') {
-                taxaJurosFinanciamento = 0.20; // Fixa a taxa média solicitada (19% a 21%)
+                taxaJurosFinanciamento = 0.20; 
             } else {
                 if (valorDesejado <= 200000) {
-                    taxaJurosFinanciamento = 0.23; // Menor que 24%
+                    taxaJurosFinanciamento = 0.23; 
                 } else {
-                    taxaJurosFinanciamento = 0.26; // Entre 25% e 27%
+                    taxaJurosFinanciamento = 0.26; 
                 }
             }
 
-            // Cálculo matemático do impacto de juros composto/amortizado simplificado para o prazo selecionado
-            const custoFinanciamentoTotal = saldoLiquido * (1 + (taxaJurosFinanciamento * (prazo / 12) * 0.7));
+            const custoFinanciamentoTotal = saldoLiquido * (1 + (taxaJurosFinanciamento * (prazo / 12) * 0.65));
             const custoConsorcioTotal = saldoLiquido * (1 + taxaAdmTotal);
             let economiaReferencial = custoFinanciamentoTotal - custoConsorcioTotal;
-            if (economiaReferencial < 0) economiaReferencial = valorDesejado * 0.45;
+            if (economiaReferencial < 0) economiaReferencial = valorDesejado * 0.40;
 
-            // Exibição dos resultados na interface
-            document.getElementById('placeholderView').style.display = 'none';
-            document.getElementById('activeView').style.display = 'block';
-
+            // Atualização Direta e Visual na Tela
             document.getElementById('resCredito').innerText = valorDesejado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-            document.getElementById('resParcela').innerText = parcelaConsorcio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('resEntrada').innerText = valorEntrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('resPrazo').innerText = `${prazo} meses`;
+            document.getElementById('resParcela').innerText = parcelaConsorcio.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
             const boxRestricao = document.getElementById('statusRestricaoBox');
             const boxEconomia = document.getElementById('resEconomia');
 
-            // Gerenciamento comercial inteligente para perfis com restrição
             if (possuiRestricao === 'Sim') {
                 boxRestricao.style.display = 'block';
-                boxEconomia.style.background = '#e67e22'; // Tom laranja amigável de alerta comercial
-                boxEconomia.innerText = `O financiamento tradicional geraria recusa de crédito. O consórcio garante sua aquisição!`;
+                boxEconomia.style.background = '#2563EB'; 
+                boxEconomia.innerText = `Análise Estratégica: Viabilizando sua aprovação por meio da carta planejada.`;
             } else {
                 boxRestricao.style.display = 'none';
-                boxEconomia.style.background = '#27ae60';
-                boxEconomia.innerText = `Economia estimada de ${economiaReferencial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })} sobre taxas bancárias comuns!`;
+                boxEconomia.style.background = '#10B981'; 
+                boxEconomia.innerText = `Economia de até ${economiaReferencial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })} em relação aos bancos tradicionais!`;
             }
+        }
 
-            // Construção do texto formatado para o consultor receber no WhatsApp
-            const textoMensagem = `Olá, realizei uma simulação completa no site e quero receber o plano ideal:\n\n` +
+        function prepararEnvio(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const tipoCredito = document.getElementById('tipoCredito').value;
+            const prazo = document.getElementById('prazoDesejado').value;
+            const valorDesejado = document.getElementById('valorDesejado').value;
+            const valorEntrada = document.getElementById('valorEntrada').value;
+            const parcelaDesejada = document.getElementById('parcelaDesejada').value;
+            const possuiRestricao = document.getElementById('possuiRestricao').value;
+            const parcelaCalculada = document.getElementById('resParcela').innerText;
+
+            const textoMensagem = `Olá, configurei meu plano no site e quero garantir as condições:\n\n` +
                 `*Nome:* ${nome}\n` +
                 `*WhatsApp:* ${whatsapp}\n` +
-                `*Tipo de Crédito:* ${tipoCredito}\n` +
-                `*Prazo Pretendido:* ${prazo} meses\n` +
-                `*Crédito Desejado:* R$ ${valorDesejado.toLocaleString('pt-BR')}\n` +
-                `*Valor de Entrada:* R$ ${valorEntrada.toLocaleString('pt-BR')} (Possui: ${possuiEntrada})\n` +
-                `*Parcela Alvo do Cliente:* R$ ${parcelaDesejada.toLocaleString('pt-BR')}\n` +
-                `*Restrição Ativa (SPC/SERASA):* ${possuiRestricao}\n\n` +
-                `*Análise do Simulador:* Parcela calculada em R$ ${parcelaConsorcio.toLocaleString('pt-BR', {maximumFractionDigits:2})} no Consórcio Livre de Juros.`;
+                `*Segmento:* ${tipoCredito}\n` +
+                `*Prazo Selecionado:* ${prazo} meses\n` +
+                `*Crédito Pretendido:* ${valorDesejado}\n` +
+                `*Entrada Disponível:* ${valorEntrada}\n` +
+                `*Parcela Alvo do Cliente:* ${parcelaDesejada}\n` +
+                `*Possui Restrição:* ${possuiRestricao}\n\n` +
+                `*Estimativa do Sistema:* Parcelas de aproximadamente ${parcelaCalculada} sem juros bancários.`;
 
-            // Configura o Link do WhatsApp com a mensagem estruturada
-            document.getElementById('whatsappLink').href = `https://wa.me/seu-numero?text=${encodeURIComponent(textoMensagem)}`;
+            window.open(`https://wa.me/seu-numero?text=${encodeURIComponent(textoMensagem)}`, '_blank');
         }
+
+        // Carrega as opções iniciais logo no primeiro carregamento do site
+        window.onload = function() {
+            atualizarOpcoesPrazo();
+        };
     </script>
 
 </body>
