@@ -50,9 +50,9 @@
             font-weight: 800;
         }
 
-        /* NAVBAR */
+        /* NAVBAR PREMIUM */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 18px 0;
@@ -83,23 +83,110 @@
             font-size: 14px;
         }
 
-        /* HERO */
-        .hero-section {
-            padding: 70px 0 40px 0;
+        /* CARROSSEL AUTOMÁTICO INDEPENDENTE (HERO BANNER) */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            overflow: hidden;
+            background-color: #0B132B;
+        }
+
+        .slide-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .slide-item.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.35);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 5;
+            color: var(--white);
+            max-width: 750px;
+            padding: 0 4%;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .hero-section h1 {
+        .slide-content h1 {
             font-family: var(--font-title);
-            font-size: 46px;
+            font-size: 44px;
+            font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 16px;
-            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
         }
 
-        /* SIMULADOR NOVO (INSPIRADO NA PRIMEIRA FOTO, MAS INTEGRADO) */
+        .slide-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .btn-slider {
+            display: inline-block;
+            background: var(--gradient-premium);
+            color: var(--white);
+            text-decoration: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 8px 20px rgba(0, 82, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        /* INDICADORES DO CARROSSEL (TRAÇOS EMBAIXO) */
+        .slider-dots {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 35px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background: var(--white);
+            width: 50px;
+        }
+
+        /* SEÇÃO SIMULADOR ESTRUTURADO */
         .simulator-section {
-            padding: 40px 0 90px 0;
+            padding: 70px 0;
         }
 
         .sim-container {
@@ -111,15 +198,16 @@
 
         .sim-card {
             background: var(--white);
-            padding: 35px;
+            padding: 40px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.03);
+            border: 1px solid #E2E8F0;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 20px;
         }
 
         .form-group {
@@ -140,7 +228,7 @@
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 12px 16px;
+            padding: 14px 16px;
             border-radius: 10px;
             border: 1px solid #CBD5E1;
             font-family: var(--font-body);
@@ -154,7 +242,7 @@
             background: var(--white);
         }
 
-        /* PAINEL DE RESULTADOS PREMIUM (ESTILO DA PRIMEIRA FOTO) */
+        /* PAINEL DE RESULTADOS PREMIUM TRACEJADO */
         .result-panel {
             background: var(--white);
             padding: 40px;
@@ -173,7 +261,6 @@
             color: #1E293B;
         }
 
-        /* GRID INTERNO DOS RESULTADOS */
         .result-grid-boxes {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -183,7 +270,7 @@
 
         .result-box-item {
             background: #F8FAFC;
-            padding: 20px 15px;
+            padding: 22px 15px;
             border-radius: 12px;
             text-align: center;
             border: 1px solid #F1F5F9;
@@ -198,7 +285,9 @@
             font-size: 12px;
             color: var(--text-muted);
             margin-bottom: 6px;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .result-box-item strong {
@@ -214,14 +303,13 @@
         
         .result-box-item.highlight strong {
             color: var(--brand-blue);
-            font-size: 24px;
+            font-size: 26px;
         }
 
         .result-box-item.tax strong {
-            color: #64748B;
+            color: #475569;
         }
 
-        /* BOTÃO WHATSAPP DA PRIMEIRA IMAGEM */
         .btn-whatsapp-proposal {
             display: flex;
             align-items: center;
@@ -230,33 +318,28 @@
             background: #25D366;
             color: var(--white);
             text-decoration: none;
-            padding: 16px;
+            padding: 18px;
             border-radius: 12px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
             transition: 0.3s;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
             text-align: center;
         }
 
-        .btn-whatsapp-proposal:hover {
-            background: #20ba5a;
-            transform: translateY(-1px);
-        }
-
-        /* TEXTO DE ECONOMIA DA PRIMEIRA FOTO */
         .economy-tag {
-            background: rgba(37, 211, 102, 0.1);
+            background: rgba(37, 211, 102, 0.08);
             color: #16a34a;
-            padding: 12px;
+            padding: 14px;
             border-radius: 10px;
             text-align: center;
             font-size: 13px;
             font-weight: 600;
             margin-bottom: 20px;
+            border: 1px solid rgba(37, 211, 102, 0.15);
         }
 
-        /* CARDS SOLUÇÕES */
+        /* SOLUÇÕES */
         .services-section {
             padding: 90px 0;
             background: var(--white);
@@ -332,6 +415,8 @@
 
         @media (max-width: 992px) {
             .sim-container { grid-template-columns: 1fr; }
+            .slide-content h1 { font-size: 32px; }
+            .slider-wrapper { height: 460px; }
         }
     </style>
 </head>
@@ -351,9 +436,39 @@
         </div>
     </header>
 
-    <section id="inicio" class="hero-section">
-        <div class="container">
-            <h1>Alavanque seu patrimônio com <span class="gradient-text">crédito inteligente</span>.</h1>
+    <section id="inicio" class="slider-wrapper">
+        
+        <div class="slide-item active">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" class="slide-bg" alt="Imóvel de Luxo">
+            <div class="slide-content">
+                <h1>Planeje a Conquista do seu <span class="gradient-text">Imóvel Próprio</span></h1>
+                <p>Construa, compre ou reforme imóveis comerciais e residenciais com taxas de administração atrativas.</p>
+                <a href="#simulador" class="btn-slider">Iniciar Simulação</a>
+            </div>
+        </div>
+
+        <div class="slide-item">
+            <img src="https://images.unsplash.com/photo-1578155296316-aa069f56f18c?auto=format&fit=crop&w=1400&q=80" class="slide-bg" alt="Maquinário Pesado">
+            <div class="slide-content">
+                <h1>Estruturação para <span class="gradient-text">Frotas e Pesados</span></h1>
+                <p>Aumente sua capacidade logística ou operacional com maquinários pesados e agrícolas de forma programada.</p>
+                <a href="#simulador" class="btn-slider">Ver Planos Operacionais</a>
+            </div>
+        </div>
+
+        <div class="slide-item">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1400&q=80" class="slide-bg" alt="Carro SUV na Estrada">
+            <div class="slide-content">
+                <h1>Adquira seu Próximo <span class="gradient-text">Automóvel</span></h1>
+                <p>Acesse as melhores linhas de crédito estruturado para veículos leves e utilitários sem juros abusivos.</p>
+                <a href="#simulador" class="btn-slider">Simular Parcela</a>
+            </div>
+        </div>
+
+        <div class="slider-dots">
+            <div class="dot active" onclick="mudarSlideManual(0)"></div>
+            <div class="dot" onclick="mudarSlideManual(1)"></div>
+            <div class="dot" onclick="mudarSlideManual(2)"></div>
         </div>
     </section>
 
@@ -411,7 +526,7 @@
                         <h3>Sua Estimativa Estruturada</h3>
 
                         <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 12px; border-radius: 8px; font-size: 12px; font-weight: 600; margin-bottom: 16px; border: 1px solid #BFDBFE; text-align: center;">
-                            ⚠️ Estratégia customizada ativa para restrição no CPF.
+                            ⚠️ Alinhamento estratégico disponível para CPFs com restrições.
                         </div>
 
                         <div class="result-grid-boxes">
@@ -438,7 +553,7 @@
                         </div>
 
                         <div class="economy-tag">
-                            Você economiza significativamente comparado ao financiamento bancário!
+                            Economia inteligente gerada diretamente através de taxas administrativas limpas!
                         </div>
                     </div>
 
@@ -502,6 +617,33 @@
     </footer>
 
     <script>
+        // LÓGICA DO CARROSSEL AUTOMÁTICO (SLIDER)
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide-item');
+        const dots = document.querySelectorAll('.dot');
+        let intervaloCarrossel = setInterval(proximoSlide, 5000); // Passa sozinho a cada 5 segundos
+
+        function mostrarSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function proximoSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            mostrarSlide(slideIndex);
+        }
+
+        function mudarSlideManual(index) {
+            slideIndex = index;
+            mostrarSlide(slideIndex);
+            clearInterval(intervaloCarrossel); // Reseta o tempo quando o usuário clica
+            intervaloCarrossel = setInterval(proximoSlide, 5000);
+        }
+
+        // LÓGICA DO SIMULADOR FINANCEIRO
         const Prazos = [36, 48, 60, 72, 80, 100, 120, 144, 180, 240];
         const taxasPorCategoria = { "Veículo": 0.20, "Imóvel": 0.25, "Caminhão": 0.22, "Máquina Agrícola": 0.23 };
 
