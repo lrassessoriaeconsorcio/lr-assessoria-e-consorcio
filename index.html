@@ -138,7 +138,7 @@
             box-shadow: 0 14px 30px rgba(37, 99, 235, 0.3);
         }
 
-        /* PROVA SOCIAL / STATS */
+        /* PROVA SOCIAL */
         .social-proof-bar {
             margin-bottom: 70px;
         }
@@ -158,7 +158,6 @@
             align-items: center;
             gap: 15px;
             border: 1px solid rgba(0,0,0,0.01);
-            transition: 0.3s;
         }
 
         .proof-card i {
@@ -176,7 +175,6 @@
         .proof-card span {
             font-size: 14px;
             font-weight: 600;
-            color: var(--text-dark);
         }
 
         /* SIMULADOR */
@@ -244,7 +242,6 @@
             font-family: var(--font-body);
             font-size: 14px;
             outline: none;
-            transition: 0.3s;
             background: #F8FAFC;
         }
 
@@ -264,7 +261,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 520px;
+            min-height: 540px;
         }
 
         .result-header {
@@ -436,7 +433,7 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
@@ -467,8 +464,8 @@
         }
 
         .client-avatar {
-            width: 52px;
-            height: 52px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--brand-blue);
@@ -532,8 +529,8 @@
 
     <section id="inicio" class="hero-section">
         <div class="container hero-max-width">
-            <h1>Realize seu carro, caminhão ou imóvel <span class="gradient-text">sem financiamento e sem juros abusivos</span>.</h1>
-            <p>Acesse o crédito ideal para expandir sua frota, adquirir maquinário ou conquistar patrimônio com parcelas inteligentes e planejadas.</p>
+            <h1>Alavanque seu patrimônio com <span class="gradient-text">crédito inteligente e taxas reduzidas</span>.</h1>
+            <p>Conquiste seu imóvel, frota de caminhões ou carros de forma planejada, fugindo das altas taxas de juros dos financiamentos bancários convencionais.</p>
             <div class="hero-buttons">
                 <a href="#simulador" class="btn-primary">Fazer Simulação Gratuita</a>
             </div>
@@ -564,7 +561,7 @@
     <section id="simulador" class="simulator-section">
         <div class="container">
             <h2 class="section-title">📊 Resultado Estimado da Simulação</h2>
-            <p class="section-subtitle">Preencha os dados abaixo e veja as estimativas mudarem na hora.</p>
+            <p class="section-subtitle">Preencha os dados e veja o plano operacional se adequar em tempo real.</p>
 
             <div class="sim-container">
                 <div class="sim-card">
@@ -592,9 +589,20 @@
                                 <select id="prazoDesejado" required onchange="dispararCalculo()">
                                     </select>
                             </div>
-                            <div class="form-group full-width">
+                            <div class="form-group">
                                 <label for="valorDesejado">Crédito Desejado</label>
-                                <input type="text" id="valorDesejado" required value="R$ 150.000,00" oninput="aplicarMascaraMoeda(this)">
+                                <input type="text" id="valorDesejado" required value="R$ 500.000,00" oninput="aplicarMascaraMoeda(this)">
+                            </div>
+                            <div class="form-group">
+                                <label for="valorEntrada">Valor de Entrada</label>
+                                <input type="text" id="valorEntrada" value="R$ 0,00" oninput="aplicarMascaraMoeda(this)">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="possuiRestricao">Possui alguma restrição cadastral (Nome com restrição)?</label>
+                                <select id="possuiRestricao" required onchange="dispararCalculo()">
+                                    <option value="Não">Não</option>
+                                    <option value="Sim">Sim</option>
+                                </select>
                             </div>
                         </div>
                         <button type="submit" style="width:100%; background:var(--gradient-premium); color:white; border:none; padding:18px; border-radius:14px; font-weight:700; cursor:pointer; margin-top:20px;">Garantir Condições Especiais</button>
@@ -604,7 +612,11 @@
                 <div class="result-panel">
                     <div>
                         <div class="result-header">
-                            <h4><i class="fa-solid fa-calculator"></i> Estruturação de Crédito Inteligente</h4>
+                            <h4><i class="fa-solid fa-calculator"></i> Estruturação de Crédito Planejado</h4>
+                        </div>
+
+                        <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 15px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid #BFDBFE;">
+                            ℹ️ <strong>Informativo Consultivo:</strong> Diferente de financiamentos engessados que bloqueiam o cliente de imediato, analisamos estratégias personalizadas para viabilizar sua adesão e posterior liberação do patrimônio.
                         </div>
 
                         <div class="result-metrics">
@@ -613,16 +625,20 @@
                                 <strong id="resCredito">R$ 0,00</strong>
                             </div>
                             <div class="metric-row">
+                                <span>Entrada Deduzida</span>
+                                <strong id="resEntrada">R$ 0,00</strong>
+                            </div>
+                            <div class="metric-row">
                                 <span>Prazo Pretendido</span>
                                 <strong id="resPrazo">0 meses</strong>
                             </div>
-                            <div class="metric-row highlight">
-                                <span>Parcela Estimada</span>
-                                <strong id="resParcela">R$ 0,00</strong>
-                            </div>
                             <div class="metric-row">
-                                <span>Custo de Juros</span>
-                                <strong style="color: #10B981; font-weight:700;">ZERO JUROS</strong>
+                                <span>Taxa de Administração (Total)</span>
+                                <strong id="resTaxa" style="color: #64748B;">R$ 0,00</strong>
+                            </div>
+                            <div class="metric-row highlight">
+                                <span>Parcela Mensal</span>
+                                <strong id="resParcela">R$ 0,00</strong>
                             </div>
                         </div>
                     </div>
@@ -638,55 +654,55 @@
     </section>
 
     <div class="urgency-bar">
-        🔥 Simulação gratuita por WhatsApp em menos de 5 minutos!
+        🔥 Condições exclusivas de taxa administrativa direto no atendimento via WhatsApp!
     </div>
 
     <section id="solucoes" class="services-section">
         <div class="container">
             <h2 class="section-title">Soluções <span class="gradient-text">Patrimoniais</span></h2>
-            <p class="section-subtitle">O meio prático para investir e obter patrimônio sem juros.</p>
+            <p class="section-subtitle">O meio mais inteligente para estruturar patrimônio sem juros compostos abusivos.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Veículos">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Veículo SUV Real">
                     </div>
                     <div class="card-body">
                         <h3>🚗 Veículos</h3>
-                        <p>Crédito estruturado para frotas comerciais leves e carros de passeio.</p>
+                        <p>Acesse o mercado de leves e utilitários modernos de forma programada e viável.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=600&q=80" alt="Imóveis">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80" alt="Imóveis comerciais e residenciais">
                     </div>
                     <div class="card-body">
                         <h3>🏡 Imóveis</h3>
-                        <p>Adquira seu ponto comercial, galpão ou residência planejada.</p>
+                        <p>Ideal para novos terrenos, construções urbanas, galpões corporativos ou residências.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1591741535873-ebf3ef8067ed?auto=format&fit=crop&w=600&q=80" alt="Caminhões">
+                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Caminhão Pesado na Rodovia">
                     </div>
                     <div class="card-body">
                         <h3>🚛 Caminhões & Pesados</h3>
-                        <p>Linhas focadas em cavalos mecânicos, carretas e expansão de frotas pesadas.</p>
+                        <p>Linhas completas destinadas a cavalos mecânicos, baús, implementos e frotas de logística.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1594142461623-010e964177b8?auto=format&fit=crop&w=600&q=80" alt="Máquinas Agrícolas">
+                        <img src="https://images.unsplash.com/photo-1530260626688-048279320445?auto=format&fit=crop&w=600&q=80" alt="Máquinas Agrícolas">
                     </div>
                     <div class="card-body">
                         <h3>🚜 Máquinas Agrícolas</h3>
-                        <p>Adquira tratores, colheitadeiras e implementos agrícolas modernos.</p>
+                        <p>Renovação e ampliação de tratores, plantadeiras e colheitadeiras sem comprometer o fluxo de safra.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
@@ -697,26 +713,26 @@
     <section id="depoimentos" class="testimonials-section">
         <div class="container">
             <h2 class="section-title">Resultados de <span class="gradient-text">Quem Comprova</span></h2>
-            <p class="section-subtitle">Pessoas reais que fugiram dos abusos do financiamento bancário tradicional.</p>
+            <p class="section-subtitle">Veja o relato sincero de clientes reais que estruturaram seu planejamento financeiro conosco.</p>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Consegui meu caminhão através da LR Consórcios e fui muito bem atendido durante todo o processo até a liberação do bem."</p>
+                    <p>"Fiquei surpreso com o suporte. Consegui programar o recebimento da minha carta para comprar meu caminhão sem ficar preso em parcelas abusivas."</p>
                     <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Ricardo Mendes">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Real Ricardo">
                         <div class="client-details">
                             <h5>Ricardo Mendes</h5>
-                            <span>Empresário Logístico</span>
+                            <span>Transportador Autônomo</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Fazer o planejamento com eles mudou nosso negócio. Conseguimos expandir nossa estrutura empresarial com custos previsíveis."</p>
+                    <p>"Excelente assessoria do início ao fim. Estava com receio pela burocracia do banco, mas o consórcio estruturado foi o melhor caminho para nossa sede."</p>
                     <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Amanda Fonseca">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Real Amanda">
                         <div class="client-details">
                             <h5>Amanda Fonseca</h5>
                             <span>Diretora Comercial</span>
@@ -726,24 +742,36 @@
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Excelente suporte e clareza nas opções de parcelas. Adquiri o maquinário agrícola mantendo o caixa da fazenda saudável."</p>
+                    <p>"Comprei meu maquinário novo mantendo a saúde financeira do meu negócio rural em dia. Atendimento muito transparente e honesto."</p>
                     <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Giovane Silva">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Real Giovane">
                         <div class="client-details">
                             <h5>Giovane Silva</h5>
-                            <span>Produtor Rural</span>
+                            <span>Produtor Agrícola</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Muito satisfeito com o atendimento transparente. Consegui trocar a frota de utilitários da minha distribuidora economizando muito."</p>
+                    <p>"Consegui trocar os veículos da minha empresa com taxas de administração justas que cabiam exatamente no nosso planejamento mensal."</p>
                     <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Carlos Eduardo">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Real Carlos">
                         <div class="client-details">
                             <h5>Carlos Eduardo</h5>
-                            <span>Distribuidora Norte</span>
+                            <span>Empresário Logístico</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Mesmo enfrentando problemas iniciais com meu score, a equipe desenhou uma estratégia eficiente que garantiu a aquisição do meu novo ponto."</p>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Real Mariana">
+                        <div class="client-details">
+                            <h5>Mariana Antunes</h5>
+                            <span>Comerciante</span>
                         </div>
                     </div>
                 </div>
@@ -795,23 +823,41 @@
             return parseFloat(limpo) / 100 || 0;
         }
 
-        // LÓGICA DO CÁLCULO EXATO: (Valor + 20%) / Prazo
+        // LÓGICA DE NEGÓCIO EXATA: 20% fixo de Taxa Adm sobre o Saldo (Crédito - Entrada)
         function dispararCalculo() {
             const prazo = parseInt(document.getElementById('prazoDesejado').value) || 60;
             const valorDesejado = converterParaNumero(document.getElementById('valorDesejado').value);
+            const valorEntrada = converterParaNumero(document.getElementById('valorEntrada').value);
+            const possuiRestricao = document.getElementById('possuiRestricao').value;
 
-            const valorComAdicional = valorDesejado * 1.20; 
+            // Saldo real operacional
+            const saldoLiquido = Math.max(0, valorDesejado - valorEntrada);
+            
+            // Taxa total de 20% exigida comercialmente
+            const taxaTotalCalculada = saldoLiquido * 0.20; 
+            const valorComAdicional = saldoLiquido + taxaTotalCalculada;
             const parcelaFinal = valorComAdicional / prazo;
 
+            // Exibição em tela
             document.getElementById('resCredito').innerText = valorDesejado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            document.getElementById('resEntrada').innerText = valorEntrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('resPrazo').innerText = `${prazo} meses`;
+            document.getElementById('resTaxa').innerText = taxaTotalCalculada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('resParcela').innerText = parcelaFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // Gerencia visual da caixa de restrição cadastral
+            const boxRestricao = document.getElementById('statusRestricaoBox');
+            if (possuiRestricao === 'Sim') {
+                boxRestricao.style.display = 'block';
+            } else {
+                boxRestricao.style.display = 'none';
+            }
         }
 
         function prepararEnvio(event) {
             event.preventDefault();
             const nome = document.getElementById('nome').value;
-            const textoMensagem = `Olá, realizei a simulação estruturada no site para ${document.getElementById('tipoCredito').value} no valor de ${document.getElementById('valorDesejado').value} com parcelas estimadas em ${document.getElementById('resParcela').innerText}. Quero dar andamento!`;
+            const textoMensagem = `Olá, fiz uma simulação no site para ${document.getElementById('tipoCredito').value}. Plano de Crédito: ${document.getElementById('valorDesejado').value} com Entrada de: ${document.getElementById('valorEntrada').value}. Parcelas calculadas em ${document.getElementById('resParcela').innerText}. Desejo receber a análise especializada do meu perfil!`;
             window.open(`https://wa.me/seu-numero?text=${encodeURIComponent(textoMensagem)}`, '_blank');
         }
 
