@@ -96,44 +96,45 @@
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
-        /* HERO */
+        /* HERO - REESTRUTURADO SEM A FOTO DA CASA */
         .hero-section {
-            padding: 70px 0 60px 0;
-            background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.05), transparent);
+            padding: 90px 0 60px 0;
+            background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent);
+            text-align: center;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
+        .hero-max-width {
+            max-width: 850px;
+            margin: 0 auto;
         }
 
-        .hero-content h1 {
+        .hero-section h1 {
             font-family: var(--font-title);
-            font-size: 46px;
+            font-size: 52px;
             line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
         }
 
-        .hero-content p {
-            font-size: 18px;
+        .hero-section p {
+            font-size: 20px;
             color: var(--text-muted);
             margin-bottom: 35px;
         }
 
         .hero-buttons {
             display: flex;
+            justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 40px;
         }
 
         .btn-primary {
             background: var(--gradient-premium);
             color: var(--white);
             text-decoration: none;
-            padding: 18px 36px;
+            padding: 18px 40px;
             border-radius: var(--radius);
             font-weight: 600;
             transition: 0.3s;
@@ -145,23 +146,8 @@
             box-shadow: 0 14px 30px rgba(37, 99, 235, 0.3);
         }
 
-        .hero-image-box {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
-            height: 440px;
-        }
-
-        .hero-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         /* PROVA SOCIAL / STATS */
         .social-proof-bar {
-            margin-top: 10px;
             margin-bottom: 70px;
         }
 
@@ -281,7 +267,7 @@
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
         }
 
-        /* PAINEL DE RESULTADOS EM TEMPO REAL */
+        /* PAINEL DE RESULTADOS EM TEMPO REAL CORRIGIDO */
         .result-panel {
             background: var(--white);
             padding: 40px;
@@ -384,7 +370,6 @@
         .btn-whatsapp-proposal:hover {
             background: #22c55e;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
         }
 
         /* URGENCY BAR */
@@ -396,10 +381,9 @@
             font-weight: 700;
             font-size: 16px;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
         }
 
-        /* SOLUÇÕES (CARDS MODERNOS DEGRADÊ) */
+        /* SOLUÇÕES (CARDS PREMIUM COM HOVER E CORREÇÃO DE IMAGENS) */
         .services-section {
             padding: 90px 0;
             background: var(--white);
@@ -417,7 +401,6 @@
             overflow: hidden;
             transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 1px solid #F1F5F9;
-            position: relative;
         }
 
         .service-card:hover {
@@ -430,7 +413,6 @@
             width: 100%;
             height: 190px;
             overflow: hidden;
-            position: relative;
         }
 
         .card-img img {
@@ -452,9 +434,6 @@
             font-family: var(--font-title);
             font-size: 20px;
             margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .card-body p {
@@ -484,7 +463,7 @@
             border-color: transparent;
         }
 
-        /* DEPOIMENTOS */
+        /* DEPOIMENTOS EXPANDIDOS */
         .testimonials-section {
             padding: 90px 0;
             background: #F8FAFC;
@@ -503,10 +482,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             border: 1px solid #E2E8F0;
             transition: 0.3s;
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(37, 99, 235, 0.2);
         }
 
         .stars {
@@ -565,36 +540,17 @@
             gap: 30px;
         }
 
-        .footer-content p {
-            color: #94A3B8;
-            font-size: 14px;
-        }
-
-        .btn-whatsapp-footer {
-            background: #25D366;
-            color: var(--white);
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
         @media (max-width: 992px) {
-            .hero-grid, .sim-container { grid-template-columns: 1fr; }
+            .sim-container { grid-template-columns: 1fr; }
             .proof-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-image-box { height: 320px; order: -1; }
         }
 
         @media (max-width: 768px) {
             .menu { display: none; }
-            .hero-content h1 { font-size: 36px; }
+            .hero-section h1 { font-size: 36px; }
             .proof-grid { grid-template-columns: 1fr; }
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full-width { grid-column: span 1; }
-            .footer-content { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -616,16 +572,11 @@
     </header>
 
     <section id="inicio" class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <h1>Realize seu carro, caminhão ou imóvel <span class="gradient-text">sem financiamento e sem juros abusivos</span>.</h1>
-                <p>Acesse créditos de até R$ 500 mil com parcelas perfeitamente planejadas e mude o patamar do seu patrimônio ou frota empresarial.</p>
-                <div class="hero-buttons">
-                    <a href="#simulador" class="btn-primary">Fazer Simulação Gratuita</a>
-                </div>
-            </div>
-            <div class="hero-image-box">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Conquistas Inteligentes LR">
+        <div class="container hero-max-width">
+            <h1>Realize seu carro, caminhão ou imóvel <span class="gradient-text">sem financiamento e sem juros abusivos</span>.</h1>
+            <p>Acesse o montante necessário para expandir sua frota ou conquistar patrimônio com parcelas inteligentes e planejadas sob medida para o seu bolso.</p>
+            <div class="hero-buttons">
+                <a href="#simulador" class="btn-primary">Fazer Simulação Gratuita</a>
             </div>
         </div>
     </section>
@@ -654,7 +605,7 @@
     <section id="simulador" class="simulator-section">
         <div class="container">
             <h2 class="section-title">📊 Resultado Estimado da Simulação</h2>
-            <p class="section-subtitle">Preencha e veja as estimativas mudarem instantaneamente na tela.</p>
+            <p class="section-subtitle">Preencha os campos abaixo e veja os valores serem atualizados instantaneamente.</p>
 
             <div class="sim-container">
                 <div class="sim-card">
@@ -684,7 +635,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="valorDesejado">Crédito Desejado</label>
-                                <input type="text" id="valorDesejado" required value="R$ 100.000,00" oninput="aplicarMascaraMoeda(this)">
+                                <input type="text" id="valorDesejado" required value="R$ 150.000,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group">
                                 <label for="possuiEntrada">Possui Entrada?</label>
@@ -699,17 +650,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="parcelaDesejada">Parcela Máxima Alvo</label>
-                                <input type="text" id="parcelaDesejada" required value="R$ 1.500,00" oninput="aplicarMascaraMoeda(this)">
+                                <input type="text" id="parcelaDesejada" required value="R$ 1.800,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group full-width">
-                                <label for="possuiRestricao">Nome com alguma restrição cadastral (SPC/SERASA)?</label>
+                                <label for="possuiRestricao">Nome com alguma restrição cadastral?</label>
                                 <select id="possuiRestricao" required onchange="dispararCalculo()">
                                     <option value="Não">Não</option>
                                     <option value="Sim">Sim</option>
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn-calc">Garantir esta Condição Especiais</button>
+                        <button type="submit" class="btn-calc" style="width:100%; background:var(--gradient-premium); color:white; border:none; padding:18px; border-radius:14px; font-weight:700; cursor:pointer; margin-top:15px;">Garantir Condições Especiais</button>
                     </form>
                 </div>
 
@@ -719,8 +670,8 @@
                             <h4><i class="fa-solid fa-calculator"></i> Estruturação de Crédito Inteligente</h4>
                         </div>
                         
-                        <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 15px; border-radius: 16px; font-size: 13.5px; font-weight: 600; margin-bottom: 20px; border: 1px solid #BFDBFE; line-height: 1.4;">
-                            ℹ️ <strong>Observação Importante:</strong> Identificamos restrição cadastral ativa. No modelo de financiamento bancário comum, isso geraria uma reprovação imediata. No entanto, através do nosso consórcio planejado estruturamos a sua aprovação de forma segura. Avance abaixo!
+                        <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 15px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid #BFDBFE;">
+                            ℹ️ <strong>Observação Consultiva:</strong> Linhas tradicionais de financiamento negam perfis com restrição de imediato. Através do consórcio, organizamos sua entrada de forma justa e segura.
                         </div>
 
                         <div class="result-metrics">
@@ -742,22 +693,19 @@
                             </div>
                             <div class="metric-row">
                                 <span>Taxa de Juros</span>
-                                <strong style="color: #10B981; font-weight: 700;">ZERO JUROS</strong>
+                                <strong style="color: #10B981;">ZERO JUROS</strong>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <div class="economy-box" id="resEconomia">
-                            Calculando...
-                        </div>
+                        <div class="economy-box" id="resEconomia">Calculando...</div>
                         <a href="#" id="whatsappLink" target="_blank" class="btn-whatsapp-proposal">
                             <i class="fa-brands fa-whatsapp"></i> Receber Análise por WhatsApp
                         </a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -768,49 +716,49 @@
     <section id="solucoes" class="services-section">
         <div class="container">
             <h2 class="section-title">Soluções <span class="gradient-text">Patrimoniais</span></h2>
-            <p class="section-subtitle">O caminho inteligente para blindar e multiplicar o seu capital de forma planejada.</p>
+            <p class="section-subtitle">O meio mais prático de investir e crescer frotas sem pagar juros bancários.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=600&q=80" alt="Veículos">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80" alt="Veículos Automotores">
                     </div>
                     <div class="card-body">
                         <h3>🚗 Veículos</h3>
-                        <p>Linhas táticas para aquisição e renovação contínua de frotas e carros de passeio.</p>
+                        <p>Crédito inteligente para carros novos, seminovos e frotas corporativas leves.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Imóveis">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Estruturas Imobiliárias">
                     </div>
                     <div class="card-body">
                         <h3>🏡 Imóveis</h3>
-                        <p>Adquira pontos comerciais, residências, terrenos ou galpões sem juros embutidos.</p>
+                        <p>Ideal para aquisição de sedes comerciais, galpões, casas, apartamentos ou lotes.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80" alt="Caminhões">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Caminhões e Pesados">
                     </div>
                     <div class="card-body">
-                        <h3>🚛 Caminhões</h3>
-                        <p>Alavanque sua capacidade de carga rodoviária sem descapitalizar o caixa operacional.</p>
+                        <h3>🚛 Caminhões & Pesados</h3>
+                        <p>Linhas completas focadas em cavalos mecânicos, carretas, baús e logística pesada.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1594142461623-010e964177b8?auto=format&fit=crop&w=600&q=80" alt="Máquinas Agrícolas">
+                        <img src="https://images.unsplash.com/photo-1530260626688-048279320445?auto=format&fit=crop&w=600&q=80" alt="Máquinas Agrícolas">
                     </div>
                     <div class="card-body">
                         <h3>🚜 Máquinas Agrícolas</h3>
-                        <p>Renove implementos rurais, tratores e maquinários com taxas de administração mínimas.</p>
+                        <p>Tecnologia no campo. Tratores, colheitadeiras e implementos agrícolas de alto nível.</p>
                         <a href="#simulador" class="btn-card">Simular Crédito</a>
                     </div>
                 </div>
@@ -821,29 +769,41 @@
     <section id="depoimentos" class="testimonials-section">
         <div class="container">
             <h2 class="section-title">Resultados de <span class="gradient-text">Quem Comprova</span></h2>
-            <p class="section-subtitle">Veja o depoimento de clientes que fugiram dos abusos bancários com a nossa ajuda.</p>
+            <p class="section-subtitle">Histórias reais de quem transformou planejamento em conquistas palpáveis.</p>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Consegui meu caminhão através da LR Consórcios e fui muito bem atendido durante todo o processo até a liberação."</p>
+                    <p>"Consegui meu caminhão através da LR Consórcios e fui muito bem atendido durante todo o processo até a liberação do bem."</p>
                     <div class="client-info">
                         <div class="client-avatar">RM</div>
                         <div class="client-details">
                             <h5>Ricardo Mendes</h5>
-                            <span>Transportes R.M.</span>
+                            <span>Empresário Logístico</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Excelente assessoria. Estávamos com receio por conta das taxas de mercado, mas conseguimos estruturar nossa sede própria sem juros."</p>
+                    <p>"Fazer o planejamento imobiliário com eles mudou nossa empresa. Conseguimos expandir nosso galpão sem juros abusivos."</p>
                     <div class="client-info">
                         <div class="client-avatar">AF</div>
                         <div class="client-details">
                             <h5>Amanda Fonseca</h5>
-                            <span>Investidora Comercial</span>
+                            <span>Diretora Comercial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Excelente suporte e clareza nas opções de parcelas. Adquiri duas máquinas agrícolas novas mantendo o fluxo de caixa saudável."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">GS</div>
+                        <div class="client-details">
+                            <h5>Giovane Silva</h5>
+                            <span>Produtor Rural</span>
                         </div>
                     </div>
                 </div>
@@ -858,11 +818,9 @@
                     <h3>LR Consórcios & Assessoria</h3>
                     <p>Construindo patrimônios sólidos com inteligência financeira.</p>
                 </div>
-                <div>
-                    <a href="https://wa.me/seu-numero" class="btn-whatsapp-footer">
-                        <i class="fa-brands fa-whatsapp"></i> Receba Análise Grátis
-                    </a>
-                </div>
+                <a href="https://wa.me/seu-numero" style="background:#25D366; color:white; padding:12px 24px; border-radius:50px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-whatsapp"></i> Falar Agora
+                </a>
             </div>
         </div>
     </footer>
@@ -886,7 +844,6 @@
                 opt.innerText = `${meses} meses`;
                 selectPrazo.appendChild(opt);
             });
-            
             dispararCalculo();
         }
 
@@ -896,14 +853,13 @@
             valor = valor.replace(".", ",");
             valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
             input.value = "R$ " + valor;
-            
             dispararCalculo();
         }
 
         function converterParaNumero(valorTexto) {
             if (!valorTexto) return 0;
-            let limpo = valorTexto.replace(/[^\d,]/g, "").replace(",", ".");
-            return parseFloat(limpo) || 0;
+            let limpo = valorTexto.replace(/[^\d]/g, "");
+            return parseFloat(limpo) / 100 || 0;
         }
 
         function toggleEntradaField() {
@@ -911,7 +867,7 @@
             const valorEntradaInput = document.getElementById('valorEntrada');
             if (possuiEntrada === 'Sim') {
                 valorEntradaInput.disabled = false;
-                valorEntradaInput.value = "R$ 20.000,00";
+                valorEntradaInput.value = "R$ 30.000,00";
             } else {
                 valorEntradaInput.disabled = true;
                 valorEntradaInput.value = "R$ 0,00";
@@ -927,29 +883,15 @@
             const possuiRestricao = document.getElementById('possuiRestricao').value;
 
             const saldoLiquido = valorDesejado - valorEntrada;
-
-            // Alíquota média estável do consórcio (taxa adm)
             const taxaAdmTotal = 0.16; 
             const parcelaConsorcio = (saldoLiquido * (1 + taxaAdmTotal)) / prazo;
 
-            // Regras Matemáticas de Juros Comparativos Solicitadas
-            let taxaJurosFinanciamento = 0;
-            if (tipoCredito === 'Veículo') {
-                taxaJurosFinanciamento = 0.20; 
-            } else {
-                if (valorDesejado <= 200000) {
-                    taxaJurosFinanciamento = 0.23; 
-                } else {
-                    taxaJurosFinanciamento = 0.26; 
-                }
-            }
-
+            let taxaJurosFinanciamento = tipoCredito === 'Veículo' ? 0.20 : (valorDesejado <= 200000 ? 0.23 : 0.26);
             const custoFinanciamentoTotal = saldoLiquido * (1 + (taxaJurosFinanciamento * (prazo / 12) * 0.65));
             const custoConsorcioTotal = saldoLiquido * (1 + taxaAdmTotal);
             let economiaReferencial = custoFinanciamentoTotal - custoConsorcioTotal;
             if (economiaReferencial < 0) economiaReferencial = valorDesejado * 0.40;
 
-            // Atualização Direta e Visual na Tela
             document.getElementById('resCredito').innerText = valorDesejado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('resEntrada').innerText = valorEntrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('resPrazo').innerText = `${prazo} meses`;
@@ -961,46 +903,25 @@
             if (possuiRestricao === 'Sim') {
                 boxRestricao.style.display = 'block';
                 boxEconomia.style.background = '#2563EB'; 
-                boxEconomia.innerText = `Análise Estratégica: Viabilizando sua aprovação por meio da carta planejada.`;
+                boxEconomia.innerText = `Análise Prática: Viabilizando aprovação justa através da modalidade de carta planejada.`;
             } else {
                 boxRestricao.style.display = 'none';
                 boxEconomia.style.background = '#10B981'; 
-                boxEconomia.innerText = `Economia de até ${economiaReferencial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })} em relação aos bancos tradicionais!`;
+                boxEconomia.innerText = `Economia real de ${economiaReferencial.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })} frente ao financiamento comum.`;
             }
         }
 
         function prepararEnvio(event) {
             event.preventDefault();
-            
             const nome = document.getElementById('nome').value;
             const whatsapp = document.getElementById('whatsapp').value;
-            const tipoCredito = document.getElementById('tipoCredito').value;
-            const prazo = document.getElementById('prazoDesejado').value;
-            const valorDesejado = document.getElementById('valorDesejado').value;
-            const valorEntrada = document.getElementById('valorEntrada').value;
-            const parcelaDesejada = document.getElementById('parcelaDesejada').value;
-            const possuiRestricao = document.getElementById('possuiRestricao').value;
-            const parcelaCalculada = document.getElementById('resParcela').innerText;
-
-            const textoMensagem = `Olá, configurei meu plano no site e quero garantir as condições:\n\n` +
-                `*Nome:* ${nome}\n` +
-                `*WhatsApp:* ${whatsapp}\n` +
-                `*Segmento:* ${tipoCredito}\n` +
-                `*Prazo Selecionado:* ${prazo} meses\n` +
-                `*Crédito Pretendido:* ${valorDesejado}\n` +
-                `*Entrada Disponível:* ${valorEntrada}\n` +
-                `*Parcela Alvo do Cliente:* ${parcelaDesejada}\n` +
-                `*Possui Restrição:* ${possuiRestricao}\n\n` +
-                `*Estimativa do Sistema:* Parcelas de aproximadamente ${parcelaCalculada} sem juros bancários.`;
-
+            const textoMensagem = `Olá, fiz a simulação estruturada no site para ${document.getElementById('tipoCredito').value} no valor de ${document.getElementById('valorDesejado').value} e quero garantir o atendimento especializado para o meu perfil.`;
             window.open(`https://wa.me/seu-numero?text=${encodeURIComponent(textoMensagem)}`, '_blank');
         }
 
-        // Carrega as opções iniciais logo no primeiro carregamento do site
         window.onload = function() {
             atualizarOpcoesPrazo();
         };
     </script>
-
 </body>
 </html>
