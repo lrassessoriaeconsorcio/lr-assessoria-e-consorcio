@@ -11,16 +11,16 @@
     
     <style>
         :root {
-            --bg-light: #F8FAFC;
-            --brand-blue: #2563EB; 
-            --brand-lilac: #7C3AED; 
-            --text-dark: #0F172A;
-            --text-muted: #475569;
+            --bg-light: #F4F7FA;
+            --brand-blue: #0052FF; 
+            --brand-lilac: #6366F1; 
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
             --white: #ffffff;
             --gradient-premium: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-lilac) 100%);
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Poppins', sans-serif;
-            --radius: 24px;
+            --radius: 16px;
         }
 
         * {
@@ -52,14 +52,14 @@
 
         /* NAVBAR */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(37, 99, 235, 0.06);
+            border-bottom: 1px solid rgba(0, 82, 255, 0.06);
         }
 
         .navbar .container {
@@ -81,97 +81,45 @@
             font-weight: 600;
             margin-left: 28px;
             font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: var(--brand-blue);
-        }
-
-        .btn-nav {
-            background: var(--brand-blue);
-            color: var(--white) !important;
-            padding: 12px 26px;
-            border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
         }
 
         /* HERO */
         .hero-section {
-            padding: 90px 0 60px 0;
-            background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent);
+            padding: 70px 0 40px 0;
             text-align: center;
-        }
-
-        .hero-max-width {
-            max-width: 850px;
-            margin: 0 auto;
         }
 
         .hero-section h1 {
             font-family: var(--font-title);
-            font-size: 52px;
+            font-size: 46px;
             line-height: 1.2;
-            margin-bottom: 24px;
-            letter-spacing: -2px;
+            margin-bottom: 16px;
+            letter-spacing: -1.5px;
         }
 
-        .hero-section p {
-            font-size: 20px;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-        }
-
-        .btn-primary {
-            background: var(--gradient-premium);
-            color: var(--white);
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: var(--radius);
-            font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-        }
-
-        /* SIMULADOR */
+        /* SIMULADOR NOVO (INSPIRADO NA PRIMEIRA FOTO, MAS INTEGRADO) */
         .simulator-section {
-            padding: 90px 0;
-            background: #F1F5F9;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: var(--font-title);
-            font-size: 38px;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 50px;
+            padding: 40px 0 90px 0;
         }
 
         .sim-container {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
             gap: 40px;
-            align-items: start;
+            align-items: stretch;
         }
 
         .sim-card {
             background: var(--white);
-            padding: 40px;
+            padding: 35px;
             border-radius: var(--radius);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 16px;
         }
 
         .form-group {
@@ -187,77 +135,93 @@
         .form-group label {
             font-size: 13px;
             font-weight: 600;
-            color: var(--text-muted);
+            color: var(--text-dark);
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 14px 18px;
-            border-radius: 14px;
-            border: 1px solid #E2E8F0;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid #CBD5E1;
             font-family: var(--font-body);
             font-size: 14px;
             outline: none;
-            background: #F8FAFC;
+            background: #FAFAFA;
         }
 
-        /* PAINEL DE RESULTADOS */
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--brand-blue);
+            background: var(--white);
+        }
+
+        /* PAINEL DE RESULTADOS PREMIUM (ESTILO DA PRIMEIRA FOTO) */
         .result-panel {
             background: var(--white);
             padding: 40px;
             border-radius: var(--radius);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.02);
-            border: 2px solid rgba(37, 99, 235, 0.08);
+            border: 2px dashed #CBD5E1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 540px;
         }
 
-        .result-header {
+        .result-panel h3 {
             text-align: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #F1F5F9;
-            padding-bottom: 15px;
+            font-family: var(--font-title);
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: #1E293B;
         }
 
-        .result-metrics {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 20px;
+        /* GRID INTERNO DOS RESULTADOS */
+        .result-grid-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 25px;
         }
 
-        .metric-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 18px;
+        .result-box-item {
             background: #F8FAFC;
-            border-radius: 14px;
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
             border: 1px solid #F1F5F9;
         }
 
-        .metric-row.highlight {
-            background: rgba(37, 99, 235, 0.04);
-            border-color: rgba(37, 99, 235, 0.15);
+        .result-box-item.full {
+            grid-column: span 2;
         }
 
-        .metric-row span {
-            font-size: 14px;
+        .result-box-item span {
+            display: block;
+            font-size: 12px;
             color: var(--text-muted);
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
-        .metric-row strong {
+        .result-box-item strong {
             font-family: var(--font-title);
-            font-size: 16px;
+            font-size: 18px;
+            color: #0F172A;
         }
 
-        .metric-row.highlight strong {
-            font-size: 22px;
+        .result-box-item.highlight {
+            background: rgba(0, 82, 255, 0.03);
+            border: 1px solid rgba(0, 82, 255, 0.1);
+        }
+        
+        .result-box-item.highlight strong {
             color: var(--brand-blue);
+            font-size: 24px;
         }
 
+        .result-box-item.tax strong {
+            color: #64748B;
+        }
+
+        /* BOTÃO WHATSAPP DA PRIMEIRA IMAGEM */
         .btn-whatsapp-proposal {
             display: flex;
             align-items: center;
@@ -266,11 +230,30 @@
             background: #25D366;
             color: var(--white);
             text-decoration: none;
-            padding: 18px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 16px;
-            text-transform: uppercase;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+            text-align: center;
+        }
+
+        .btn-whatsapp-proposal:hover {
+            background: #20ba5a;
+            transform: translateY(-1px);
+        }
+
+        /* TEXTO DE ECONOMIA DA PRIMEIRA FOTO */
+        .economy-tag {
+            background: rgba(37, 211, 102, 0.1);
+            color: #16a34a;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         /* CARDS SOLUÇÕES */
@@ -289,8 +272,7 @@
             background: var(--bg-light);
             border-radius: var(--radius);
             overflow: hidden;
-            border: 1px solid #F1F5F9;
-            transition: 0.3s;
+            border: 1px solid #E2E8F0;
         }
 
         .card-img {
@@ -306,19 +288,7 @@
         }
 
         .card-body {
-            padding: 30px;
-        }
-
-        .btn-card {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            background: var(--white);
-            color: var(--brand-blue);
-            padding: 14px;
-            border-radius: 14px;
-            font-weight: 600;
-            border: 1px solid rgba(37, 99, 235, 0.15);
+            padding: 24px;
         }
 
         /* DEPOIMENTOS */
@@ -337,7 +307,6 @@
             background: var(--white);
             padding: 35px;
             border-radius: var(--radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             border: 1px solid #E2E8F0;
         }
 
@@ -352,13 +321,13 @@
             height: 55px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--brand-blue);
         }
 
         .footer {
             background: #0F172A;
             color: var(--white);
-            padding: 50px 0;
+            padding: 40px 0;
+            text-align: center;
         }
 
         @media (max-width: 992px) {
@@ -383,18 +352,15 @@
     </header>
 
     <section id="inicio" class="hero-section">
-        <div class="container hero-max-width">
+        <div class="container">
             <h1>Alavanque seu patrimônio com <span class="gradient-text">crédito inteligente</span>.</h1>
-            <p>Conquiste seu imóvel, frotas ou maquinários agrícolas com planejamento estruturado focado em taxas administrativas claras.</p>
         </div>
     </section>
 
     <section id="simulador" class="simulator-section">
         <div class="container">
-            <h2 class="section-title">📊 Simulador de Planejamento Patrimonial</h2>
-            <p class="section-subtitle">Ajuste os valores abaixo para ver as condições específicas do seu plano.</p>
-
             <div class="sim-container">
+                
                 <div class="sim-card">
                     <form id="leadForm" onsubmit="prepararEnvio(event)">
                         <div class="form-grid">
@@ -421,11 +387,11 @@
                                     </select>
                             </div>
                             <div class="form-group">
-                                <label for="valorDesejado">Crédito Desejado</label>
+                                <label for="valorDesejado">Crédito Desejado (R$)</label>
                                 <input type="text" id="valorDesejado" required value="R$ 500.000,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group">
-                                <label for="valorEntrada">Valor de Entrada</label>
+                                <label for="valorEntrada">Valor de Entrada (R$)</label>
                                 <input type="text" id="valorEntrada" value="R$ 0,00" oninput="aplicarMascaraMoeda(this)">
                             </div>
                             <div class="form-group full-width">
@@ -436,100 +402,75 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" style="width:100%; background:var(--gradient-premium); color:white; border:none; padding:18px; border-radius:14px; font-weight:700; cursor:pointer; margin-top:20px;">Garantir Condições Especiais</button>
+                        <button type="submit" style="width:100%; background:var(--gradient-premium); color:white; border:none; padding:16px; border-radius:10px; font-weight:700; cursor:pointer; margin-top:20px; font-size:15px;">Calcular Cenários</button>
                     </form>
                 </div>
 
                 <div class="result-panel">
                     <div>
-                        <div class="result-header">
-                            <h4><i class="fa-solid fa-calculator"></i> Estruturação de Crédito</h4>
+                        <h3>Sua Estimativa Estruturada</h3>
+
+                        <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 12px; border-radius: 8px; font-size: 12px; font-weight: 600; margin-bottom: 16px; border: 1px solid #BFDBFE; text-align: center;">
+                            ⚠️ Estratégia customizada ativa para restrição no CPF.
                         </div>
 
-                        <div id="statusRestricaoBox" style="display:none; background: #EFF6FF; color: #1E40AF; padding: 15px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid #BFDBFE;">
-                            ℹ️ <strong>Informativo:</strong> Analisamos estratégias específicas para viabilizar planos mesmo com restrição ativa no CPF.
-                        </div>
-
-                        <div class="result-metrics">
-                            <div class="metric-row">
-                                <span>Crédito Solicitado</span>
+                        <div class="result-grid-boxes">
+                            <div class="result-box-item">
+                                <span>Valor do Crédito</span>
                                 <strong id="resCredito">R$ 0,00</strong>
                             </div>
-                            <div class="metric-row">
+                            <div class="result-box-item highlight">
+                                <span>Parcela Estimada</span>
+                                <strong id="resParcela">R$ 0,00</strong>
+                            </div>
+                            <div class="result-box-item">
+                                <span>Prazo Médio</span>
+                                <strong id="resPrazo">0 meses</strong>
+                            </div>
+                            <div class="result-box-item tax">
+                                <span>Custo de Taxas</span>
+                                <strong id="resTaxa">R$ 0,00</strong>
+                            </div>
+                            <div class="result-box-item full">
                                 <span>Entrada Informada</span>
                                 <strong id="resEntrada">R$ 0,00</strong>
                             </div>
-                            <div class="metric-row">
-                                <span>Prazo</span>
-                                <strong id="resPrazo">0 meses</strong>
-                            </div>
-                            <div class="metric-row">
-                                <span>Taxa de Administração</span>
-                                <strong id="resTaxa" style="color: #475569;">R$ 0,00</strong>
-                            </div>
-                            <div class="metric-row highlight">
-                                <span>Parcela Mensal</span>
-                                <strong id="resParcela">R$ 0,00</strong>
-                            </div>
+                        </div>
+
+                        <div class="economy-tag">
+                            Você economiza significativamente comparado ao financiamento bancário!
                         </div>
                     </div>
 
                     <div>
                         <a href="#" id="whatsappLink" target="_blank" class="btn-whatsapp-proposal">
-                            <i class="fa-brands fa-whatsapp"></i> Receber Análise por WhatsApp
+                            <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> Receber proposta personalizada no WhatsApp
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <section id="solucoes" class="services-section">
         <div class="container">
-            <h2 class="section-title">Soluções <span class="gradient-text">Patrimoniais</span></h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Veículo SUV">
-                    </div>
-                    <div class="card-body">
-                        <h3>🚗 Veículos</h3>
-                        <p>Acesse o mercado de leves e utilitários modernos de forma programada.</p>
-                        <a href="#simulador" class="btn-card">Simular</a>
-                    </div>
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80"></div>
+                    <div class="card-body"><h3>🚗 Veículos</h3><p>Crédito estruturado para utilitários e leves.</p></div>
                 </div>
-
                 <div class="service-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80" alt="Imóveis comerciais">
-                    </div>
-                    <div class="card-body">
-                        <h3>🏡 Imóveis</h3>
-                        <p>Ideal para terrenos, construções urbanas ou galpões corporativos.</p>
-                        <a href="#simulador" class="btn-card">Simular</a>
-                    </div>
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80"></div>
+                    <div class="card-body"><h3>🏡 Imóveis</h3><p>Para construções urbanas ou áreas comerciais.</p></div>
                 </div>
-
                 <div class="service-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1578155296316-aa069f56f18c?auto=format&fit=crop&w=600&q=80" alt="Trator e Maquinário de Carga">
-                    </div>
-                    <div class="card-body">
-                        <h3>🚛 Caminhões & Pesados</h3>
-                        <p>Linhas completas destinadas a cavalos mecânicos e pesados estruturais.</p>
-                        <a href="#simulador" class="btn-card">Simular</a>
-                    </div>
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1578155296316-aa069f56f18c?auto=format&fit=crop&w=600&q=80"></div>
+                    <div class="card-body"><h3>🚛 Caminhões & Pesados</h3><p>Linhas destinadas a veículos pesados estruturais.</p></div>
                 </div>
-
                 <div class="service-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1530260626688-048279320445?auto=format&fit=crop&w=600&q=80" alt="Máquina Campo">
-                    </div>
-                    <div class="card-body">
-                        <h3>🚜 Máquinas Agrícolas</h3>
-                        <p>Ampliação de colheitadeiras sem comprometer o fluxo de caixa de safra.</p>
-                        <a href="#simulador" class="btn-card">Simular</a>
-                    </div>
+                    <div class="card-img"><img src="https://images.unsplash.com/photo-1530260626688-048279320445?auto=format&fit=crop&w=600&q=80"></div>
+                    <div class="card-body"><h3>🚜 Máquinas Agrícolas</h3><p>Investimento no campo sem travar fluxo de safra.</p></div>
                 </div>
             </div>
         </div>
@@ -537,41 +478,19 @@
 
     <section id="depoimentos" class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">Resultados de <span class="gradient-text">Quem Comprova</span></h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Fiquei satisfeito com o atendimento. Consegui programar o recebimento para focar no novo maquinário pesado sem aperto."</p>
+                    <p>"Fiquei satisfeita com o atendimento. Consegui programar o recebimento para focar no novo maquinário pesado."</p>
                     <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Natural">
-                        <div class="client-details">
-                            <h5>Renata Silveira</h5>
-                            <span>Produtora Comercial</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar">
+                        <div><h5>Renata Silveira</h5><span>Produtora Comercial</span></div>
                     </div>
                 </div>
-
                 <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
                     <p>"A assessoria foi bem clara sobre as taxas administrativas de tabela. Consegui estruturar a compra do galpão."</p>
                     <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Natural">
-                        <div class="client-details">
-                            <h5>Marcos André</h5>
-                            <span>Logística Integrada</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Estava com restrição no score interna, mas montamos um cronograma preventivo que deu certo para mim."</p>
-                    <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar" alt="Foto Natural">
-                        <div class="client-details">
-                            <h5>Thiago Castro</h5>
-                            <span>Autônomo</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80" class="client-avatar">
+                        <div><h5>Marcos André</h5><span>Logística Integrada</span></div>
                     </div>
                 </div>
             </div>
@@ -579,21 +498,12 @@
     </section>
 
     <footer class="footer">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2026 LR Consórcios & Assessoria. Todos os direitos reservados.</p>
-        </div>
+        <p>&copy; 2026 LR Consórcios & Assessoria. Todos os direitos reservados.</p>
     </footer>
 
     <script>
         const Prazos = [36, 48, 60, 72, 80, 100, 120, 144, 180, 240];
-
-        // Definição das taxas variáveis por tipo de crédito
-        const taxasPorCategoria = {
-            "Veículo": 0.20,
-            "Imóvel": 0.25,
-            "Caminhão": 0.22,
-            "Máquina Agrícola": 0.23
-        };
+        const taxasPorCategoria = { "Veículo": 0.20, "Imóvel": 0.25, "Caminhão": 0.22, "Máquina Agrícola": 0.23 };
 
         function atualizarOpcoesPrazo() {
             const selectPrazo = document.getElementById("prazoDesejado");
@@ -622,7 +532,6 @@
             return parseFloat(limpo) / 100 || 0;
         }
 
-        // LÓGICA ATUALIZADA: ((Crédito - Entrada) + Taxa Dinâmica) / Prazo
         function dispararCalculo() {
             const prazo = parseInt(document.getElementById('prazoDesejado').value) || 60;
             const valorDesejado = converterParaNumero(document.getElementById('valorDesejado').value);
@@ -631,8 +540,6 @@
             const possuiRestricao = document.getElementById('possuiRestricao').value;
 
             const saldoLiquido = Math.max(0, valorDesejado - valorEntrada);
-            
-            // Obtém a taxa correspondente à categoria selecionada
             const percentualTaxa = taxasPorCategoria[tipoCredito] || 0.20;
             const taxaTotalCalculada = saldoLiquido * percentualTaxa; 
             
@@ -651,13 +558,11 @@
 
         function prepararEnvio(event) {
             event.preventDefault();
-            const textoMensagem = `Olá, fiz uma simulação de ${document.getElementById('tipoCredito').value}. Crédito: ${document.getElementById('valorDesejado').value} | Entrada: ${document.getElementById('valorEntrada').value} | Parcelas de ${document.getElementById('resParcela').innerText}. Desejo atendimento comercial.`;
+            const textoMensagem = `Olá, fiz uma simulação de ${document.getElementById('tipoCredito').value}. Crédito: ${document.getElementById('valorDesejado').value} | Entrada: ${document.getElementById('valorEntrada').value} | Parcelas de ${document.getElementById('resParcela').innerText}.`;
             window.open(`https://wa.me/seu-numero?text=${encodeURIComponent(textoMensagem)}`, '_blank');
         }
 
-        window.onload = function() {
-            atualizarOpcoesPrazo();
-        };
+        window.onload = function() { atualizarOpcoesPrazo(); };
     </script>
 </body>
 </html>
