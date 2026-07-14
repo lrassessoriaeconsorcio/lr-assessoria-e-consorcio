@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LR Consórcios & Assessoria Patrimonial</title>
+    <title>LR Investimentos | Soluções Inteligentes de Crédito</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,21 +11,22 @@
     
     <style>
         :root {
-            --bg-light: #F9FAFB;
-            --brand-dark: #6D28D9; 
-            --brand-main: #8B5CF6; 
-            --brand-light: #A78BFA;
-            --brand-soft: #C4B5FD;
+            --bg-light: #F4F7FA;
+            --brand-dark: #0A192F;      /* Azul Marinho Profundo */
+            --brand-main: #0066FF;      /* Azul Oceano Ativo */
+            --brand-light: #38BDF8;     /* Azul Glacial */
+            --brand-glow: #00F2FE;      /* Ciano Brilhante */
             --text-dark: #0F172A;
             --text-muted: #475569;
             --white: #ffffff;
-            --gradient-premium: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-main) 100%);
+            --gradient-ocean: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-main) 100%);
+            --gradient-button: linear-gradient(135deg, var(--brand-main) 0%, #0052cc 100%);
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'Poppins', sans-serif;
             --radius-lg: 20px;
             --radius-md: 12px;
-            --shadow-sm: 0 4px 6px -1px rgba(109, 40, 217, 0.05), 0 2px 4px -1px rgba(109, 40, 217, 0.03);
-            --shadow-lg: 0 20px 25px -5px rgba(109, 40, 217, 0.1), 0 10px 10px -5px rgba(109, 40, 217, 0.04);
+            --shadow-sm: 0 4px 10px rgba(10, 25, 47, 0.04);
+            --shadow-lg: 0 20px 40px rgba(10, 25, 47, 0.08);
         }
 
         * {
@@ -51,27 +52,27 @@
 
         /* UTILITIES */
         span.gradient-text {
-            background: var(--gradient-premium);
+            background: linear-gradient(135deg, var(--brand-main) 0%, var(--brand-light) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
         }
         
-        span.lilac-highlight {
+        span.ocean-highlight {
             color: var(--brand-main);
             font-weight: 700;
         }
 
         /* NAVBAR PREMIUM */
         .navbar {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 22px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(0, 102, 255, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -83,10 +84,10 @@
 
         .logo h2 {
             font-family: var(--font-title);
-            font-size: 27.5px; /* Aumentado em ~25% */
+            font-size: 28px;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-dark);
+            letter-spacing: -1px;
+            color: var(--brand-dark);
         }
 
         .menu a {
@@ -102,13 +103,13 @@
             color: var(--brand-main);
         }
 
-        /* CARROSSEL AUTOMÁTICO COM OVERLAY GRADIENTE LILÁS */
+        /* CARROSSEL AUTOMÁTICO - OCEAN STYLE */
         .slider-wrapper {
             position: relative;
             width: 100%;
             height: 580px;
             overflow: hidden;
-            background-color: #120626;
+            background-color: var(--brand-dark);
         }
 
         .slide-item {
@@ -140,14 +141,14 @@
             object-fit: cover;
         }
 
-        /* Overlay sofisticado com infusão de lilás */
+        /* Overlay com tom Azul Oceano profundo */
         .slider-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(26, 8, 57, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%);
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(15, 23, 42, 0.75) 100%);
             z-index: 3;
         }
 
@@ -190,20 +191,20 @@
 
         .btn-slider {
             display: inline-block;
-            background: var(--gradient-premium);
+            background: var(--gradient-button);
             color: var(--white);
             text-decoration: none;
             padding: 16px 40px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 15px;
-            box-shadow: 0 10px 25px rgba(109, 40, 217, 0.35);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.35);
             transition: all 0.3s ease;
         }
 
         .btn-slider:hover {
             transform: translateY(-3px);
-            box-shadow: 0 14px 30px rgba(109, 40, 217, 0.45);
+            box-shadow: 0 14px 30px rgba(0, 102, 255, 0.45);
         }
 
         .slider-dots {
@@ -247,7 +248,7 @@
             padding: 40px;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(167, 139, 250, 0.15);
+            border: 1px solid rgba(0, 102, 255, 0.1);
         }
 
         .form-grid {
@@ -269,7 +270,7 @@
         .form-group label {
             font-size: 13.5px;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--brand-dark);
             letter-spacing: -0.2px;
         }
 
@@ -288,7 +289,7 @@
         .form-group input:focus, .form-group select:focus {
             border-color: var(--brand-main);
             background: var(--white);
-            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.12);
         }
 
         .alert-minimos {
@@ -304,13 +305,13 @@
             animation: fadeIn 0.4s ease;
         }
 
-        /* COMPARAÇÃO REESTRUTURADA PREMIUM */
+        /* COMPARAÇÃO REESTRUTURADA BOLD */
         .comparison-panel {
             background: var(--white);
             padding: 40px;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(167, 139, 250, 0.15);
+            border: 1px solid rgba(0, 102, 255, 0.1);
         }
 
         .comparison-panel h3 {
@@ -319,6 +320,7 @@
             margin-bottom: 30px;
             text-align: center;
             letter-spacing: -0.5px;
+            color: var(--brand-dark);
         }
 
         .compare-grid {
@@ -335,11 +337,11 @@
             transition: transform 0.3s ease;
         }
 
-        /* DESTAQUE ABSOLUTO DA LR ASSESSORIA */
+        /* DESTAQUE DO PLANO LR INVESTIMENTOS */
         .compare-column.our-plan {
-            background: linear-gradient(180deg, rgba(139, 92, 246, 0.06) 0%, rgba(109, 40, 217, 0.02) 100%);
+            background: linear-gradient(180deg, rgba(0, 102, 255, 0.05) 0%, rgba(10, 25, 47, 0.02) 100%);
             border: 2.5px solid var(--brand-main);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.12);
             position: relative;
         }
 
@@ -356,7 +358,7 @@
             font-weight: 700;
         }
 
-        .our-plan h4 { color: var(--brand-dark); }
+        .our-plan h4 { color: var(--brand-main); }
         .bank-plan h4 { color: #64748B; }
 
         .metric-group {
@@ -379,10 +381,9 @@
             color: var(--text-dark);
         }
 
-        /* Hierarquia visual dos números principais */
         .our-plan .main-price { 
             font-size: 28px; 
-            color: var(--brand-dark);
+            color: var(--brand-main);
             font-weight: 800;
         }
         .bank-plan .main-price { 
@@ -425,10 +426,10 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
         }
 
-        /* NOVA SEÇÃO DE CREDIBILIDADE / DIFERENCIAIS */
+        /* SEÇÃO DE CREDIBILIDADE */
         .credibility-section {
             padding: 60px 0 80px 0;
-            background: #F1F5F9;
+            background: #EDF2F7;
         }
 
         .credibility-grid {
@@ -442,7 +443,7 @@
             padding: 30px 24px;
             border-radius: var(--radius-md);
             text-align: center;
-            border: 1px solid rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(0, 102, 255, 0.08);
             box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease;
         }
@@ -481,6 +482,7 @@
             font-size: 32px;
             margin-bottom: 50px;
             letter-spacing: -1px;
+            color: var(--brand-dark);
         }
 
         .services-grid {
@@ -501,7 +503,7 @@
         .service-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
-            border-color: var(--brand-soft);
+            border-color: var(--brand-light);
         }
 
         .card-img {
@@ -526,6 +528,7 @@
             font-size: 19px;
             margin-bottom: 10px;
             font-family: var(--font-title);
+            color: var(--brand-dark);
         }
 
         .card-body p {
@@ -535,12 +538,12 @@
 
         /* FOOTER */
         .footer {
-            background: #0B051A;
+            background: var(--brand-dark);
             color: rgba(255, 255, 255, 0.7);
             padding: 40px 0;
             text-align: center;
             font-size: 14px;
-            border-top: 1px solid rgba(139, 92, 246, 0.15);
+            border-top: 1px solid rgba(0, 102, 255, 0.15);
         }
 
         /* BOTÃO FIXO FLUTUANTE WHATSAPP */
@@ -573,7 +576,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* RESPONSIVIDADE COMPLETA */
+        /* RESPONSIVIDADE */
         @media (max-width: 992px) {
             .sim-container { grid-template-columns: 1fr; gap: 30px; }
             .slide-content h1 { font-size: 36px; }
@@ -585,7 +588,7 @@
             .form-grid { grid-template-columns: 1fr; }
             .form-group.full-width { grid-column: span 1; }
             .compare-grid { grid-template-columns: 1fr; }
-            .menu { display: none; } /* Simplificação responsiva clássica para foco na conversão */
+            .menu { display: none; } 
             .slide-content h1 { font-size: 28px; }
             .slide-content p { font-size: 16px; }
             .slider-wrapper { height: 440px; }
@@ -598,7 +601,7 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">
-                <h2>LR Consórcios <span class="lilac-highlight">& Assessoria</span></h2>
+                <h2>LR <span class="ocean-highlight">Investimentos</span></h2>
             </div>
             <nav class="menu">
                 <a href="#inicio">Início</a>
@@ -614,9 +617,9 @@
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80" class="slide-bg" alt="Imóveis de Alto Padrão">
             <div class="slider-overlay"></div>
             <div class="slide-content">
-                <h1>Planeje seu <span class="gradient-text">Imóvel Próprio</span></h1>
-                <p>Compre, construa ou reforme patrimônios imobiliários comerciais ou residenciais sem juros abusivos.</p>
-                <a href="#simulador" class="btn-slider">Fazer Comparativo Real</a>
+                <h1>Seu <span class="gradient-text">Imóvel Próprio</span> Planejado</h1>
+                <p>Compre, construa ou reforme patrimônios imobiliários estruturados sem pagar as taxas de juros comuns de financiamentos.</p>
+                <a href="#simulador" class="btn-slider">Fazer Comparativo em Tempo Real</a>
             </div>
         </div>
 
@@ -624,9 +627,9 @@
             <img src="A2S.jpg" onerror="this.src='a2s.jpg'; this.onerror=null;" class="slide-bg" alt="Pesados e Tratores">
             <div class="slider-overlay"></div>
             <div class="slide-content">
-                <h1>Estruturação para <span class="gradient-text">Pesados & Frotas</span></h1>
-                <p>Alavanque seu agronegócio ou operação estrutural utilizando capital estrategicamente programado.</p>
-                <a href="#simulador" class="btn-slider">Simular Alocação</a>
+                <h1>Expansão de <span class="gradient-text">Frotas & Agronegócio</span></h1>
+                <p>Alavanque sua infraestrutura rural ou logística de transporte com injeção de capital estratégico programado.</p>
+                <a href="#simulador" class="btn-slider">Simular Alocação de Recursos</a>
             </div>
         </div>
 
@@ -634,9 +637,9 @@
             <img src="caminhao-truck.jpg" onerror="this.src='Caminhao-Truck.jpg'; this.onerror=null;" class="slide-bg" alt="Caminhões de Linha">
             <div class="slider-overlay"></div>
             <div class="slide-content">
-                <h1>Adquira seu Próximo <span class="gradient-text">Caminhão</span></h1>
-                <p>Linhas completas dedicadas a frotistas e transportadores maximizarem as margens de lucro.</p>
-                <a href="#simulador" class="btn-slider">Ver Planos Operacionais</a>
+                <h1>Adquira seu Novo <span class="gradient-text">Caminhão</span></h1>
+                <p>Estruturas financeiras inteligentes moldadas para frotistas que buscam maximizar o retorno operacional.</p>
+                <a href="#simulador" class="btn-slider">Ver Planos e Prazos</a>
             </div>
         </div>
 
@@ -652,23 +655,23 @@
             <div class="credibility-grid">
                 <div class="credibility-card">
                     <i class="fa-solid fa-earth-americas"></i>
-                    <h4>Atendimento em todo Brasil</h4>
-                    <p>Consultoria digital e presencial pronta para atender suas demandas onde você estiver.</p>
+                    <h4>Atendimento Nacional</h4>
+                    <p>Estrutura totalmente otimizada para assessorar clientes em todos os estados do Brasil.</p>
                 </div>
                 <div class="credibility-card">
-                    <i class="fa-solid fa-user-tie"></i>
-                    <h4>Especialistas em Consórcio</h4>
-                    <p>Profissionais certificados para desenhar a melhor engenharia financeira para o seu perfil.</p>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h4>Planejamento sob Medida</h4>
+                    <p>Consultores certificados prontos para construir a engrenagem perfeita para o seu capital.</p>
                 </div>
                 <div class="credibility-card">
-                    <i class="fa-solid fa-sliders"></i>
-                    <h4>Análise Personalizada</h4>
-                    <p>Estudamos fluxos de caixa e capacidades para propor opções reais de alta economia.</p>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Análise Estratégica</h4>
+                    <p>Avaliamos fluxo de caixa empresarial e pessoal para entregar o maior índice de economia.</p>
                 </div>
                 <div class="credibility-card">
-                    <i class="fa-solid fa-comments"></i>
-                    <h4>Suporte via WhatsApp</h4>
-                    <p>Comunicação sem burocracias com atendimento consultivo focado no seu tempo.</p>
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Contato sem Burocracia</h4>
+                    <p>Suporte direto no WhatsApp para atendimento focado na sua velocidade diária.</p>
                 </div>
             </div>
         </div>
@@ -686,14 +689,14 @@
 
                             <div class="form-group full-width">
                                 <label>Nome Completo</label>
-                                <input type="text" id="nome" placeholder="Seu nome completo" required>
+                                <input type="text" id="nome" placeholder="Seu nome" required>
                             </div>
                             <div class="form-group full-width">
                                 <label>WhatsApp</label>
                                 <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
                             </div>
                             <div class="form-group">
-                                <label>Tipo de Bem</label>
+                                <label>Tipo de Bem desejado</label>
                                 <select id="tipoBem" onchange="configurarPrazos(); calcularComparativo();">
                                     <option value="veiculo">Veículo 🚗</option>
                                     <option value="imovel" selected>Imóvel 🏡</option>
@@ -701,16 +704,16 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Prazo Escolhido</label>
+                                <label>Prazo Estimado</label>
                                 <select id="prazo">
                                     </select>
                             </div>
                             <div class="form-group">
-                                <label>Valor do Bem (R$)</label>
+                                <label>Valor Estimado do Bem (R$)</label>
                                 <input type="text" id="valorBem" value="R$ 200.000,00" oninput="mascaraMoeda(this)">
                             </div>
                             <div class="form-group">
-                                <label>Valor da Entrada (R$)</label>
+                                <label>Valor que possui de Entrada (R$)</label>
                                 <input type="text" id="valorEntrada" value="R$ 30.000,00" oninput="mascaraMoeda(this)">
                             </div>
                         </div>
@@ -718,15 +721,15 @@
                 </div>
 
                 <div class="comparison-panel">
-                    <h3>Cenário Comparativo Real</h3>
+                    <h3>Comparativo Financeiro Real</h3>
 
                     <div class="compare-grid">
                         
                         <div class="compare-column our-plan">
-                            <h4>Plano LR Assessoria</h4>
+                            <h4>LR Investimentos</h4>
                             
                             <div class="metric-group">
-                                <span>Entrada Aplicada</span>
+                                <span>Sua Entrada</span>
                                 <strong id="lrEntrada">R$ 0,00</strong>
                             </div>
                             <div class="metric-group">
@@ -734,13 +737,13 @@
                                 <strong id="lrParcela" class="main-price">R$ 0,00</strong>
                             </div>
                             <div class="metric-group">
-                                <span>Total Pago no Fim</span>
+                                <span>Total Pago Final</span>
                                 <strong id="lrTotal">R$ 0,00</strong>
                             </div>
                         </div>
 
                         <div class="compare-column bank-plan">
-                            <h4>Financiamento Comum</h4>
+                            <h4>Financiamento Bancário</h4>
                             
                             <div class="metric-group">
                                 <span>Entrada Obrigatória (50%)</span>
@@ -751,7 +754,7 @@
                                 <strong id="bankParcela" class="main-price">R$ 0,00</strong>
                             </div>
                             <div class="metric-group">
-                                <span>Total Pago no Fim</span>
+                                <span>Total Pago Final</span>
                                 <strong id="bankTotal">R$ 0,00</strong>
                             </div>
                         </div>
@@ -759,11 +762,11 @@
                     </div>
 
                     <div class="economy-banner">
-                        Economia Inteligente: <span id="totalEconomia">R$ 0,00</span> economizados!
+                        Economia Gerada: <span id="totalEconomia">R$ 0,00</span> economizados!
                     </div>
 
                     <a href="#" onclick="enviarProposta(event)" class="btn-whatsapp-proposal">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Solicitar Análise de Crédito Direta
+                        <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Solicitar Análise Especializada
                     </a>
                 </div>
 
@@ -773,7 +776,7 @@
 
     <section id="solucoes" class="services-section">
         <div class="container">
-            <h2>Nossas Linhas de <span class="gradient-text">Crédito Estruturado</span></h2>
+            <h2>Portfólio de <span class="gradient-text">Alocação Estruturada</span></h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="card-img">
@@ -781,7 +784,7 @@
                     </div>
                     <div class="card-body">
                         <h3>🚗 Veículos</h3>
-                        <p>Entrada mínima de R$ 4.500 e parcelas planejadas a partir de R$ 450.</p>
+                        <p>A partir de R$ 4.500 de entrada e parcelas de início de R$ 450.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -790,7 +793,7 @@
                     </div>
                     <div class="card-body">
                         <h3>🏡 Imóveis</h3>
-                        <p>Estruturas para aquisição urbana, rural ou residencial a partir de R$ 800 mensais.</p>
+                        <p>Linhas completas para construir, adquirir ou reformar patrimônios a partir de R$ 800 por mês.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -799,7 +802,7 @@
                     </div>
                     <div class="card-body">
                         <h3>🚛 Caminhões</h3>
-                        <p>Planos táticos voltados para a ampliação estruturada de frotas rodoviárias.</p>
+                        <p>Planejamento focado no transporte de cargas pesadas com taxas inteligentes.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -808,23 +811,23 @@
                     </div>
                     <div class="card-body">
                         <h3>🚜 Pesados & Agrícolas</h3>
-                        <p>Aquisição de maquinários e implementos para potencializar produções sem travar caixa.</p>
+                        <p>Renovação e aquisição de maquinário agrícola e industrial de alta produtividade.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/seu-numero-aqui" target="_blank" class="whatsapp-floating" aria-label="Fale Conosco no WhatsApp">
+    <a href="https://wa.me/seu-numero-aqui" target="_blank" class="whatsapp-floating" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <footer class="footer">
-        <p>&copy; 2026 LR Consórcios & Assessoria. Todos os direitos reservados. Design UI/UX Conceitual Premium.</p>
+        <p>&copy; 2026 LR Investimentos. Todos os direitos reservados. Design UI/UX Conceitual Premium.</p>
     </footer>
 
     <script>
-        // SLIDER AUTOMÁTICO INTERNO CORE
+        // SLIDER AUTOMÁTICO
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide-item');
         const dots = document.querySelectorAll('.dot');
@@ -879,7 +882,7 @@
             });
         }
 
-        // REGRAS DE CÁLCULO PRESERVADAS E INTEGRADAS
+        // REGRAS DE CÁLCULO
         function calcularComparativo() {
             const tipo = document.getElementById('tipoBem').value;
             const prazo = parseInt(document.getElementById('prazo').value) || 120;
@@ -898,7 +901,7 @@
                 boxAlertas.innerText = `Aviso: A entrada mínima regulamentada para este segmento é de R$ ${entradaMinima.toLocaleString('pt-BR')}.`;
             }
 
-            // --- PLANO LR ASSESSORIA ---
+            // --- PLANO LR INVESTIMENTOS ---
             let saldoLiquidoLR = Math.max(0, valorBem - valorEntrada);
             let totalComTaxaLR = saldoLiquidoLR + (valorBem * jurosEmpresa);
             let parcelaLR = totalComTaxaLR / prazo;
@@ -910,7 +913,7 @@
 
             let totalPagoLRFinal = valorEntrada + totalComTaxaLR;
 
-            // --- FINANCIAMENTO TRADICIONAL BANCÁRIO ---
+            // --- FINANCIAMENTO BANCÁRIO ---
             let entradaBanco = valorBem * 0.50; 
             let saldoFinanciadoBanco = Math.max(0, valorBem - entradaBanco);
             let taxaFixaBanco = valorBem * 0.30;
@@ -923,7 +926,7 @@
             let parcelaBancoFinal = parcelaBancoBase + (taxaFixaBanco / prazo);
             let totalPagoBancoFinal = entradaBanco + (parcelaBancoFinal * prazo);
 
-            // RENDERIZAÇÃO NA INTERFACE
+            // RENDERIZAÇÃO
             document.getElementById('lrEntrada').innerText = valorEntrada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('lrParcela').innerText = parcelaLR.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('lrTotal').innerText = totalPagoLRFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -944,7 +947,7 @@
             const parc = document.getElementById('lrParcela').innerText;
             const econ = document.getElementById('totalEconomia').innerText;
             
-            const msg = `Olá! Meu nome é ${nome}. Montei uma simulação para ${tipo} no valor de ${valor}. No plano LR a parcela ficou em ${parc} com economia projetada de ${econ}! Gostaria de validar minha linha de crédito.`;
+            const msg = `Olá! Meu nome é ${nome}. Fiz uma simulação de ${tipo} no valor de ${valor} na LR Investimentos. O plano me gerou parcelas de ${parc} com uma economia de ${econ}! Gostaria de validar minha proposta.`;
             window.open(`https://wa.me/seu-numero-aqui?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
